@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hovedside</title>
+    <link rel = "icon" href = "../Bilder/Eirik/EB_logo.ico" type = "image/x-icon">
+    <style>
+        html, body, .holster {
+    height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
+}
+
+
+main {
+    height: 100vh;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    scroll-snap-align: start;
+}
+
+.topnav {
+    overflow: hidden;
+    /*text-align: center;*/
+}
+
+.topnav a {
+    list-style-type:none;
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+    color: black;
+}
+.container {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container2 {
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    min-height: 80vh;
+    width: 25rem;
+    border-radius: 30px;
+    padding: 0 5rem;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
+    background: linear-gradient(
+            to top,
+            rgba(245,70,66,0.75),
+            rgb(0, 127, 255)
+    );
+}
+.card2 {
+    min-height: 80vh;
+    width: 25rem;
+    border-radius: 30px;
+    padding: 0 5rem;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
+    background: linear-gradient(
+            to top,
+            rgba(66, 245, 90, 0.75),
+            rgba(245, 70, 66, 0.75)
+    );
+}
+.bilde {
+    padding-top: 20px;
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.circle{
+    width: 15rem;
+    height: 15rem;
+    background: linear-gradient(
+    to right,
+    rgba(245, 221, 66, 0.75),
+    rgb(0, 127, 255)
+    );
+    position: absolute;
+    border-radius: 50%;
+    border-color: white;
+}
+.info h1{
+    font-size: 3rem;
+    text-align: center;
+    transition: all 0.75s ease-out;
+    z-index: 1;
+    color: white;
+}
+.info h2{
+    font-size: 2rem;
+    padding: 1rem 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+}
+.info h3{
+    font-size: 1.3rem;
+    padding : 1rem 0;
+    color: white;
+    font-weight: lighter;
+    text-align: center;
+    transition: all 0.75s ease-out;
+    z-index: 1;
+}
+.Linker {
+    margin-bottom: 5rem;
+    display: flex;
+    justify-content: space-between ;
+    transition: all 0.75s ease-out;
+}
+.Linker button {
+    padding: 1rem 2rem;
+    background: darkslateblue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bolder;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+}
+.info{
+    text-align: center;
+}
+.info span{
+    font-size: 1em;
+    padding : 1rem 0;
+    color: white;
+    text-align: center;
+    top: -100px;
+    z-index: 1;
+}
+.Linker a {
+    margin-left: auto;  
+    margin-right: auto; 
+}
+.Linker img{
+    display: block;
+    width: 3rem;
+    height: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    position: relative;
+    bottom: -50px;
+}
+.hidden {
+    opacity:0;
+}
+.console-container {
+    font-size:1em;
+    text-align:center;
+    height:20px;
+    width:100%;
+    display:block;
+    position:relative;
+    color:white;
+    padding : 0rem 2rem;
+    top:0;
+    bottom:0;
+    left: 0;
+    right:0;
+    margin:auto;
+}
+.console-underscore {
+    display:inline-block;
+    position:relative;
+    top:-0.1em;
+    left:5px;
+    color: white;
+}
+
+    </style>
+
+</head>
+<body>
+<main>
+    <section class="section section-1">
+        <div class="container">
+            <div class="card">
+                <div class="bilde">
+                    <div class="circle"></div>
+                    <h1 style="color: white">EB</h1>
+                </div>
+                <div class="info">
+                    <h2 class='console-container'>Eirik Bjørdal</h2>
+                    <br>
+                    <h3>Student ved Universitetet i Agder</h3>
+                </div>
+                <div class="Linker">
+                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+</main>
+<script>
+
+</script>
+</body>
+</html>
