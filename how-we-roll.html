@@ -21,7 +21,7 @@
     .selector{
         width: 350px;
 }
-    #selectfield{
+    #selectField{
         width: 100%;
         padding: 15px 20px;
         margin-bottom: 30px;
@@ -33,8 +33,28 @@
         justify-content: space-between;
         cursor: pointer;
 }
-    #selectfield fas fa-caret-down{
-    width: 12px;
+    #selectField fas fa-caret-down{
+        width: 12px;
+}
+    #namelist{
+        width: 100%;
+        background: rgba(255,255,255,0.7);
+        border-radius: 6px;
+        overflow: hidden;
+}
+    .options{
+        width: 100%;
+        padding: 15px;
+        list-style: none;
+        cursor: pointer;
+        box-sizing: border-box;
+        position: relative;
+}
+    .options:hover{
+        background: rgba(255,255,255,0.7);
+}
+    .hide{
+        visibility: hidden;
 }
     </style>
 
@@ -43,33 +63,33 @@
     <div class="container">
 
         <div class="selector">
-            <div id="selectfield">
-                <p>Velg navn</p>
+            <div id="selectField">
+                <p id="selectText">Velg navn</p>
                 <span><i class="fas fa-caret-down"></i></span>
             </div>
-            <ul>
-                <li>
+            <ul id="namelist" class="hide">
+                <li class="options">
                     <p>Eirik</p>
                 </li>
-                <li>
+                <li class="options">
                     <p>Linh</p>
                 </li>
-                <li>
+                <li class="options">
                     <p>Laurits</p>
                 </li>
-                <li>
+                <li class="options">
                     <p>Robin</p>
                 </li>
-                <li>
+                <li class="options">
                     <p>Markus</p>
                 </li>
-                <li>
+                <li class="options">
                     <p>Elise</p>
                 </li>
-                <li>
+                <li class="options">
                     <p>Abdallah</p>
                 </li>
-                <li>
+                <li class="options">
                     <p>Ottar</p>
                 </li>
             </ul>
@@ -77,5 +97,22 @@
         </div>
 
     </div>
+
+<script>
+    var selectField = document.getElementById("selectField");
+    var selectText = document.getElementById("selectText");
+    var options = document.getElementsByClassName("options");
+    var namelist = document.getElementById("namelist");
+
+    selectField.onclick = function(){
+        namelist.classList.toggle("hide");
+    }
+
+    for(option of options){
+        option.onclick = function(){
+            selectText.innerHTML = this.textContent;
+        }
+     }
+</script>
 </body>
 </html>
