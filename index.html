@@ -6,7 +6,6 @@
     <link rel = "icon" href = "../Bilder/Eirik/EB_logo.ico" type = "image/x-icon">
     <style>
         html, body, .holster {
-    height: 100%;
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     min-height: 100vh;
     background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
@@ -21,14 +20,15 @@
 }
 
 .container {
-    padding-top: 20px;
-    display: flex;
+    padding-top: 25px;
+    padding-bottom: 25px;
     justify-content: center;
     align-items: center;
     display: none;
 }
 .card {
-    min-height: 80vh;
+
+    min-height: 550px;
     width: 25rem;
     border-radius: 30px;
     padding: 0 5rem;
@@ -41,12 +41,9 @@
 }
 .bilde {
     padding-top: 20px;
-    min-height: 35vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    clear:left;
+    padding-left: 80px;
+    justify-content: center;  
+    text-align: center;
 }
 .circle{
     width: 15rem;
@@ -56,16 +53,17 @@
     rgba(245, 221, 66, 0.75),
     rgb(0, 127, 255)
     );
-    position: absolute;
     border-radius: 50%;
     border-color: white;
-    clear:left;
+    vertical-align: middle;
+    display: table-cell;
+    align-items: center;
 }
 .info h1{
     font-size: 3rem;
     text-align: center;
     transition: all 0.75s ease-out;
-    z-index: 1;
+ 
     color: white;
 }
 .info h2{
@@ -82,14 +80,10 @@
     font-weight: lighter;
     text-align: center;
     transition: all 0.75s ease-out;
-    z-index: 1;
+
 }
 .Linker {
-    margin-bottom: 5rem;
-    display: flex;
-    justify-content: space-between ;
-    transition: all 0.75s ease-out;
-    clear:left;
+    align-items: center;
 }
 .Linker button {
     padding: 1rem 2rem;
@@ -101,7 +95,6 @@
     text-align: center;
     font-weight: bolder;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2);
-    clear:left;
 }
 .info{
     text-align: center;
@@ -125,7 +118,7 @@
     margin-left: auto;
     margin-right: auto;
     cursor: pointer;
-    position: relative;
+
     bottom: -50px;
 }
 .hidden {
@@ -137,7 +130,7 @@
     height:20px;
     width:100%;
     display:block;
-    position:relative;
+  
     color:white;
     padding : 0rem 2rem;
     top:0;
@@ -148,30 +141,47 @@
 }
 .neste, .forrige {
     cursor: pointer;
-    width: auto;
     padding: 16px;
     color: white;
-    font-size: large;
-    user-select: none;
+    font-size: 30px;
     margin-bottom: 2vh;
+    margin: 0 2px;
+    display: inline-block;
+    transform: translateY(-2vh);
+    user-select: none;
+    -webkit-user-select: none;
 }
 .dot {
-  cursor: pointer;
   height: 15px;
   width: 15px;
   margin: 0 2px;
-  background-color: #bbb;
+  background-color: darkslateblue;
   border-radius: 50%;
   display: inline-block;
   transition: background-color 0.6s ease;
   margin-bottom: 2vh;
+  user-select: none;
+  -webkit-user-select: none;
+}
+.center{
+    text-align: center;
+    padding-bottom: 20px;
 }
 
-.active, .dot:hover {
-  background-color: #717171;
+.active {
+  border:1px solid white; 
 }
-.nedeside{
-    margin-bottom: 2vh;
+
+a button {
+    padding: 1rem 2rem;
+    background: darkslateblue;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    text-align: center;
+    font-weight: bolder;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2);
 }
     </style>
 
@@ -182,9 +192,8 @@
         <div class="container">
             <div class="card">
                 <div class="bilde">
-                    <div class="circle"></div>
-                    <h1 style="color: white">EB</h1>
-                </div>
+                    <div class="circle"><h1 style="color: white">EB</h1></div>
+               </div>
                 <div class="info">
                     <h2 class='console-container'>Eirik Bjørdal</h2>
                     <br>
@@ -192,22 +201,20 @@
                 </div>
                 <div class="Linker">
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
-                </div>
-                
+                </div>   
             </div>
         </div>
-
     </section>
-    
     <section class="section section-1">
         <div class="container">
             <div class="card">
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
-                    <div class="circle"></div>
-                    <!--Det som står i bilde-->
-                    <h1 style="color: white">Linh</h1>
-                </div>
+                    <div class="circle">
+                <!--Det som står i bilde-->
+                        <h1 style="color: white">Linh</h1>
+                    </div>
+              </div>
                 <div class="info">
                     <!--Tittel-->
                     <h2 class='console-container'>Linh</h2>
@@ -215,11 +222,8 @@
                     <!--Info om deg selv-->
                     <h3>Skrive noe her :)</h3>
                 </div>
-                <div class="Linker">
-                    
-                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
-
-                    
+                <div class="Linker">                  
+                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>                    
                 </div>
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
             </div>
@@ -230,9 +234,10 @@
             <div class="card">
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
-                    <div class="circle"></div>
-                    <!--Det som står i bilde-->
-                    <h1 style="color: white">Laurits</h1>
+                    <div class="circle">
+                         <!--Det som står i bilde-->
+                        <h1 style="color: white">Laurits</h1>
+                    </div>                  
                 </div>
                 <div class="info">
                     <!--Tittel-->
@@ -241,11 +246,8 @@
                     <!--Info om deg selv-->
                     <h3>Skriv noe her :)</h3>
                 </div>
-                <div class="Linker">
-                    
-                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
-
-                    
+                <div class="Linker">                  
+                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>               
                 </div>
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
             </div>
@@ -256,9 +258,10 @@
             <div class="card">
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
-                    <div class="circle"></div>
-                    <!--Det som står i bilde-->
-                    <h1 style="color: white">Robin</h1>
+                    <div class="circle">
+                        <!--Det som står i bilde-->
+                        <h1 style="color: white">Robin</h1>
+                    </div>                                    
                 </div>
                 <div class="info">
                     <!--Tittel-->
@@ -267,11 +270,8 @@
                     <!--Info om deg selv-->
                     <h3>Student ved Universitetet i Agder</h3>
                 </div>
-                <div class="Linker">
-                    
-                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
-
-                    
+                <div class="Linker">                   
+                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>                   
                 </div>
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
             </div>
@@ -282,9 +282,10 @@
             <div class="card">
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
-                    <div class="circle"></div>
-                    <!--Det som står i bilde-->
-                    <h1 style="color: white">Markus</h1>
+                    <div class="circle">
+                        <!--Det som står i bilde-->
+                        <h1 style="color: white">Markus</h1>
+                    </div>                  
                 </div>
                 <div class="info">
                     <!--Tittel-->
@@ -293,11 +294,8 @@
                     <!--Info om deg selv-->
                     <h3>Student ved Universitetet i Agder</h3>
                 </div>
-                <div class="Linker">
-                    
-                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
-
-                    
+                <div class="Linker">                
+                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>                   
                 </div>
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
             </div>
@@ -308,9 +306,10 @@
             <div class="card">
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
-                    <div class="circle"></div>
-                    <!--Det som står i bilde-->
-                    <h1 style="color: white">Elise</h1>
+                    <div class="circle">
+                        <!--Det som står i bilde-->
+                        <h1 style="color: white">Elise</h1>
+                    </div>              
                 </div>
                 <div class="info">
                     <!--Tittel-->
@@ -319,11 +318,8 @@
                     <!--Info om deg selv-->
                     <h3>Student ved Universitetet i Agder</h3>
                 </div>
-                <div class="Linker">
-                    
-                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
-
-                    
+                <div class="Linker">                  
+                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>                   
                 </div>
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
             </div>
@@ -334,9 +330,10 @@
             <div class="card">
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
-                    <div class="circle"></div>
-                    <!--Det som står i bilde-->
-                    <h1 style="color: white">Abdallah</h1>
+                    <div class="circle">
+                        <!--Det som står i bilde-->
+                        <h1 style="color: white">Abdallah</h1>
+                    </div>                  
                 </div>
                 <div class="info">
                     <!--Tittel-->
@@ -345,11 +342,8 @@
                     <!--Info om deg selv-->
                     <h3>Student ved Universitetet i Agder</h3>
                 </div>
-                <div class="Linker">
-                    
-                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
-
-                    
+                <div class="Linker">                    
+                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>               
                 </div>
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
             </div>
@@ -360,9 +354,10 @@
             <div class="card">
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
-                    <div class="circle"></div>
-                    <!--Det som står i bilde-->
-                    <h1 style="color: white">Ottar</h1>
+                    <div class="circle">
+                        <!--Det som står i bilde-->
+                        <h1 style="color: white">Ottar</h1>
+                    </div> 
                 </div>
                 <div class="info">
                     <!--Tittel-->
@@ -371,28 +366,29 @@
                     <!--Info om deg selv-->
                     <h3>Student ved Universitetet i Agder</h3>
                 </div>
-                <div class="Linker">
-                    
-                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
-
-                    
+                <div class="Linker">     
+                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>    
                 </div>
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
             </div>
         </div>
     </section>
+    
     <div style="text-align:center" class="nedeside">
         <a class="forrige" onclick="pluskort(-1)">&#10094;</a>
         <span class="dot" onclick="visKort(1)"></span> 
-        <span class="dot" onclick="visKort(2)"></span> 
-        <span class="dot" onclick="visKort(3)"></span> 
-        <span class="dot" onclick="visKort(4)"></span> 
-        <span class="dot" onclick="visKort(5)"></span> 
-        <span class="dot" onclick="visKort(6)"></span> 
-        <span class="dot" onclick="visKort(7)"></span> 
-        <span class="dot" onclick="visKort(8)"></span> 
+        <span class="dot" style="background-color: darksalmon;" onclick="visKort(2)"></span> 
+        <span class="dot" style="background-color: darkcyan;" onclick="visKort(3)"></span> 
+        <span class="dot" style="background-color: darkviolet;" onclick="visKort(4)"></span> 
+        <span class="dot" style="background-color: darkgray;" onclick="visKort(5)"></span> 
+        <span class="dot" style="background-color: darkred;" onclick="visKort(6)"></span> 
+        <span class="dot" style="background-color: darkturquoise;" onclick="visKort(7)"></span> 
+        <span class="dot" style="background-color: darkseagreen;" onclick="visKort(8)"></span> 
         <a class="neste" onclick="pluskort(1)">&#10095;</a>
-      </div>
+    </div>
+    <div class="center">
+        <a href="how-we-roll.html"><button>How we roll</button></a><a href="hwr-report.html"><button>Report</button></a>
+    </div>
 </main>
 <script>
     var KortIndex = 1;
