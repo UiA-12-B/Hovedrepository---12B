@@ -56,6 +56,9 @@
     .hide{
         visibility: hidden;
 }
+    .rotate{
+        transform: rotate(180deg);
+}
     </style>
 
 </head>
@@ -65,7 +68,7 @@
         <div class="selector">
             <div id="selectField">
                 <p id="selectText">Velg navn</p>
-                <span><i class="fas fa-caret-down"></i></span>
+                <span><i class="fas fa-caret-down" id="arrowIcon"></i></span>
             </div>
             <ul id="namelist" class="hide">
                 <li class="options">
@@ -103,14 +106,18 @@
     var selectText = document.getElementById("selectText");
     var options = document.getElementsByClassName("options");
     var namelist = document.getElementById("namelist");
+    var arrowIcon = document.getElementById("arrowIcon");
 
     selectField.onclick = function(){
         namelist.classList.toggle("hide");
+        arrowIcon.classList.toggle("rotate");
     }
 
     for(option of options){
         option.onclick = function(){
             selectText.innerHTML = this.textContent;
+            namelist.classList.toggle("hide");
+            arrowIcon.classList.toggle("rotate");
         }
      }
 </script>
