@@ -14,7 +14,8 @@
         min-height: 100vh;
         background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
         display: flex;
-        align-items: flex-start;
+        align-items: center;
+        flex-direction:column;
         justify-content: center;
         padding: 5rem;
 }
@@ -24,7 +25,6 @@
     #selectField{
         width: 100%;
         padding: 15px 20px;
-        margin-bottom: 30px;
         box-sizing: border-box;
         background: rgba(255,255,255,0.7);
         border-radius: 6px;
@@ -59,12 +59,28 @@
     .rotate{
         transform: rotate(180deg);
 }
+    .question{
+        font-size: px;
+        font family:arial;
+        border-radius: 6px;
+        color:yellow;
+}
+    .slider{
+        display:flex;
+        align-items:center;
+        background:r;
+        width:800px;
+        opacity:0.75;
+}
+    .slider:hover{
+        opacity:1;
+        cursor:pointer;
+}
     </style>
 
 </head>
 <body>
     <div class="container">
-
         <div class="selector">
             <div id="selectField">
                 <p id="selectText">Velg navn</p>
@@ -96,9 +112,14 @@
                     <p>Ottar</p>
                 </li>
             </ul>
-
         </div>
-
+        <div class="question">
+            <p>Hvor godt trives du i gruppen?</p>
+        </div>
+        <input type="range" min="1" max="100" class="slider" id="mRange">
+        <div class="question">
+            <p></p>
+        </div>
     </div>
 
 <script>
