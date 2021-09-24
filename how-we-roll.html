@@ -14,9 +14,18 @@
         min-height: 100vh;
         background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
         display: flex;
-        align-items: flex-start;
-        justify-content: center;
+        align-items: center;
+        flex-direction:column;
+        justify-content: top;
         padding: 5rem;
+}
+
+    .hwr-page h1{
+        font-size: 80px;
+        background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
+        text-transform: uppercase;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
 }
     .selector{
         width: 350px;
@@ -24,28 +33,26 @@
     #selectField{
         width: 100%;
         padding: 15px 20px;
-        margin-top: 70px;
+        margin-top: 50px;
         box-sizing: border-box;
         background: rgba(255,255,255,0.7);
-        border-radius: 6px;
         display: flex;
         align-items: center;
         justify-content: space-between;
         cursor: pointer;
 }
     #selectField fas fa-caret-down{
-        width: 15px;
+        width: 12px;
 
 }
     #namelist{
         width: 100%;
         background: rgba(255,255,255,0.7);
-        border-radius: 6px;
         overflow: hidden;
 }
     .options{
         width: 100%;
-        padding: 15px;
+        padding: 10px;
         list-style: none;
         cursor: pointer;
         box-sizing: border-box;
@@ -60,12 +67,33 @@
     .rotate{
         transform: rotate(180deg);
 }
+
+    .question{
+        font-size: px;
+        font family:arial;
+        border-radius: 6px;
+        color:yellow;
+}
+    .slider{
+        display:flex;
+        align-items:center;
+        background:r;
+        width:800px;
+        opacity:0.75;
+}
+    .slider:hover{
+        opacity:1;
+        cursor:pointer;
+}
     </style>
 
 </head>
 <body>
     <div class="container">
 
+        <div class="hwr-page">
+            <h1>how we roll</h1> <!--update heading for page-->
+        </div>
         <div class="selector">
             <div id="selectField">
                 <p id="selectText">Velg navn</p>
@@ -98,9 +126,14 @@
                     <p>Ottar Worren</p>
                 </li>
             </ul>
-
         </div>
-
+        <div class="question">
+            <p>Hvor godt trives du i gruppen?</p>
+        </div>
+        <input type="range" min="1" max="100" class="slider" id="mRange">
+        <div class="question">
+            <p></p>
+        </div>
     </div>
 
 <script>
