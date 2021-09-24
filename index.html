@@ -9,6 +9,7 @@
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     min-height: 100vh;
     background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
+    overflow: hidden;
 }
 
 .section {
@@ -179,10 +180,61 @@ a button {
     color: white;
     cursor: pointer;
     border-radius: 30px;
+    margin-bottom: 40px;
     text-align: center;
     font-weight: bolder;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2);
 }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 20px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    position: relative;
+    left: 0;
+    top: 10vh;
+    margin: auto;
+    padding: 20px;
+    width: 60%;
+    text-align: center;
+    min-height: 30vh;
+    width: 25rem;
+    border-radius: 30px;
+    padding: 0 5rem;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
+    background: rgb(56, 56, 56);
+    color: white;
+}
+.modal-content h1 {
+    padding-top: 20px;
+}
+.lukk {
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.modal-button {
+    padding: 1rem 2rem;
+    background: rgba(68, 96, 155, 0.664);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 30px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-weight: bolder;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+}
+
     </style>
 
 </head>
@@ -197,7 +249,7 @@ a button {
                 <div class="info">
                     <h2 class='console-container'>Eirik Bjørdal</h2>
                     <br>
-                    <h3>Student ved Universitetet i Agder</h3>
+                    <button class="modal-button" href="#myModal1">Info</button>
                 </div>
                 <div class="Linker">
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
@@ -205,6 +257,16 @@ a button {
             </div>
         </div>
     </section>
+      <div id="myModal1" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="lukk"></span>
+          <h1>Eirik Bjørdal</h1>
+          <p>Info</p>
+        </div>
+      
+      </div>
     <section class="section section-1">
         <div class="container">
             <div class="card">
@@ -219,8 +281,7 @@ a button {
                     <!--Tittel-->
                     <h2 class='console-container'>Linh</h2>
                     <br>
-                    <!--Info om deg selv-->
-                    <h3>Skrive noe her :)</h3>
+                    <button class="modal-button" href="#myModal2">Info</button>
                 </div>
                 <div class="Linker">                  
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>                    
@@ -229,6 +290,16 @@ a button {
             </div>
         </div>
     </section>
+    <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="lukk"></span>
+          <h1>Ditt navn</h1>
+          <p>Info</p>
+        </div>
+      
+      </div>
     <section class="section section-1">
         <div class="container">
             <div class="card">
@@ -243,8 +314,7 @@ a button {
                     <!--Tittel-->
                     <h2 class='console-container'>Laurits</h2>
                     <br>
-                    <!--Info om deg selv-->
-                    <h3>Skriv noe her :)</h3>
+                    <button class="modal-button" href="#myModal3">Info</button>
                 </div>
                 <div class="Linker">                  
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>               
@@ -253,6 +323,16 @@ a button {
             </div>
         </div>
     </section>
+    <div id="myModal3" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="lukk"></span>
+          <h1>Ditt navn</h1>
+          <p>Info</p>
+        </div>
+      
+      </div>
     <section class="section section-1">
         <div class="container">
             <div class="card">
@@ -267,8 +347,7 @@ a button {
                     <!--Tittel-->
                     <h2 class='console-container'>Robin</h2>
                     <br>
-                    <!--Info om deg selv-->
-                    <h3>Student ved Universitetet i Agder</h3>
+                    <button class="modal-button" href="#myModal4">Info</button>
                 </div>
                 <div class="Linker">                   
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>                   
@@ -277,6 +356,16 @@ a button {
             </div>
         </div>
     </section>
+    <div id="myModal4" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="lukk"></span>
+          <h1>Ditt navn</h1>
+          <p>Info</p>
+        </div>
+      
+      </div>
     <section class="section section-1">
         <div class="container">
             <div class="card">
@@ -291,8 +380,7 @@ a button {
                     <!--Tittel-->
                     <h2 class='console-container'>Markus</h2>
                     <br>
-                    <!--Info om deg selv-->
-                    <h3>Student ved Universitetet i Agder</h3>
+                    <button class="modal-button" href="#myModal5">Info</button>
                 </div>
                 <div class="Linker">                
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>                   
@@ -301,6 +389,16 @@ a button {
             </div>
         </div>
     </section>
+    <div id="myModal5" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="lukk"></span>
+          <h1>Ditt navn</h1>
+          <p>Info</p>
+        </div>
+      
+      </div>
     <section class="section section-1">
         <div class="container">
             <div class="card">
@@ -315,8 +413,7 @@ a button {
                     <!--Tittel-->
                     <h2 class='console-container'>Elise</h2>
                     <br>
-                    <!--Info om deg selv-->
-                    <h3>Student ved Universitetet i Agder</h3>
+                    <button class="modal-button" href="#myModal6">Info</button>
                 </div>
                 <div class="Linker">                  
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>                   
@@ -325,6 +422,16 @@ a button {
             </div>
         </div>
     </section>
+    <div id="myModal6" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="lukk"></span>
+          <h1>Ditt navn</h1>
+          <p>Info</p>
+        </div>
+      
+      </div>
     <section class="section section-1">
         <div class="container">
             <div class="card">
@@ -339,8 +446,7 @@ a button {
                     <!--Tittel-->
                     <h2 class='console-container'>Abdallah</h2>
                     <br>
-                    <!--Info om deg selv-->
-                    <h3>Student ved Universitetet i Agder</h3>
+                    <button class="modal-button" href="#myModal7">Info</button>
                 </div>
                 <div class="Linker">                    
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>               
@@ -349,6 +455,16 @@ a button {
             </div>
         </div>
     </section>
+    <div id="myModal7" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="lukk"></span>
+          <h1>Ditt navn</h1>
+          <p>Info</p>
+        </div>
+      
+      </div>
     <section class="section section-1">
         <div class="container">
             <div class="card">
@@ -363,8 +479,7 @@ a button {
                     <!--Tittel-->
                     <h2 class='console-container'>Ottar</h2>
                     <br>
-                    <!--Info om deg selv-->
-                    <h3>Student ved Universitetet i Agder</h3>
+                    <button class="modal-button" href="#myModal8">Info</button>
                 </div>
                 <div class="Linker">     
                     <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>    
@@ -373,7 +488,16 @@ a button {
             </div>
         </div>
     </section>
-    
+    <div id="myModal8" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <span class="lukk"></span>
+          <h1>Ditt navn</h1>
+          <p>Info</p>
+        </div>
+      
+      </div>
     <div style="text-align:center" class="nedeside">
         <a class="forrige" onclick="pluskort(-1)">&#10094;</a>
         <span class="dot" onclick="visKort(1)"></span> 
@@ -417,6 +541,43 @@ a button {
          cards[KortIndex-1].style.display = "block";  
          dots[KortIndex-1].className += " active";
     }
+    // Får tak i knappen som åpner modalen
+    var btn = document.querySelectorAll("button.modal-button");
+
+    // Får tak i alle modals
+    var modals = document.querySelectorAll('.modal');
+
+    // Får ta i span element
+    var spans = document.getElementsByClassName("lukk");
+
+    // Åpner modal referert i knapp
+    for (var i = 0; i < btn.length; i++) {
+    btn[i].onclick = function(e) {
+        e.preventDefault();
+        modal = document.querySelector(e.target.getAttribute("href"));
+        modal.style.display = "block";
+    }
+    }
+
+    // Lukker element når du trykker på x (Bruker ikke denne)
+    for (var i = 0; i < spans.length; i++) {
+    spans[i].onclick = function() {
+        for (var index in modals) {
+        if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+        }
+    }
+    }
+
+    // Lukkes når du trykker utenfor modal
+    window.onclick = function(event) {
+        if (event.target.classList.contains('modal')) {
+        for (var index in modals) {
+        if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";    
+        }
+        }
+    }
+
+
 </script>
 </body>
 </html>
