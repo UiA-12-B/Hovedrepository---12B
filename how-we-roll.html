@@ -41,10 +41,6 @@
         justify-content: space-between;
         cursor: pointer;
 }
-    #selectField fas fa-caret-down{
-        width: 12px;
-
-}
     #namelist{
         width: 100%;
         background: rgba(255,255,255,0.7);
@@ -52,15 +48,19 @@
 }
     .options{
         width: 100%;
-        padding: 10px;
+        padding: 15px 20px;
         list-style: none;
-        cursor: pointer;
         box-sizing: border-box;
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        cursor: pointer;
 }
     .options:hover{
         background: rgba(255,255,255,0.7);
 }
+
     .hide{
         visibility: hidden;
 }
@@ -92,38 +92,45 @@
     <div class="container">
 
         <div class="hwr-page">
-            <h1>how we roll</h1> <!--update heading for page-->
+            <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
         </div>
         <div class="selector">
             <div id="selectField">
-                <p id="selectText">Velg navn</p>
-                <span><i class="fas fa-caret-down" id="arrowIcon"></i></span>
+                <p id="selectText" style="font-size:17.5px"><b>Velg navn</b></p> <!--style for seclectfield is updated-->
+                <span><i class="fas fa-caret-down fa-2x" id="arrowIcon" style="color:#3C3B43"></i></span>
             </div>
             <ul id="namelist" class="hide">
-
                 <li class="options">
                     <p>Eirik Bjørdal</p>
+                    <span><i class="fas fa-circle" style="color: darkslateblue"></i></span>
                 </li>
                 <li class="options">
                     <p>Linh Tra</p>
+                    <span><i class="fas fa-circle" style="color: darksalmon"></i></span>
                 </li>
                 <li class="options">
                     <p>Laurits Lund</p>
+                    <span><i class="fas fa-circle" style="color: darkcyan"></i></span>
                 </li>
                 <li class="options">
                     <p>Robin Finsådel</p>
+                    <span><i class="fas fa-circle" style="color: darkviolet"></i></span>
                 </li>
                 <li class="options">
                     <p>Markus Fjelltun</p>
+                    <span><i class="fas fa-circle" style="color: darkgrey"></i></span>
                 </li>
                 <li class="options">
                     <p>Elise Tokmak</p>
+                    <span><i class="fas fa-circle" style="color: darkred"></i></span>
                 </li>
                 <li class="options">
                     <p>Abdallah Bakir</p>
+                    <span><i class="fas fa-circle" style="color: darkturquoise"></i></span>
                 </li>
                 <li class="options">
                     <p>Ottar Worren</p>
+                    <span><i class="fas fa-circle" style="color: darkseagreen"></i></span>
                 </li>
             </ul>
         </div>
