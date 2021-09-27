@@ -2,6 +2,7 @@
 <html lang="eng">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HWR § Report</title>
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
     <style>
@@ -27,14 +28,18 @@
         height: 175px;
         width: 900px;
         border-radius: 10px;
+        position: relative;
     }
 
-    
+
 
     h1{
     font-size: 3rem;
     text-align: center;
-    color: white;
+    background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
+    text-transform: uppercase;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     }
 
     #{
@@ -138,10 +143,15 @@
     text-align: center;
     font-weight: bolder;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+    transition: all 0.3s ease-in;
+    margin: 10px;
     }
 
    button:hover{
+   }
 
+   p{
+   padding-top: 50px;
    }
 
 
@@ -161,38 +171,36 @@
 
            <div class="wrap">
                <div id="circle1">
-
+                   <p>Eirik</p>
                </div>
                <div id="circle2">
-
+                   <p>Linh</p>
                </div>
                <div id="circle3">
-
+                   <p>Laurits</p>
                </div>
                <div id="circle4">
-
+                   <p>Robin</p>
                </div>
                <div id="circle5">
-
+                   <p>Markus</p>
                </div>
                <div id="circle6">
-
+                   <p>Elise</p>
                </div>
                <div id="circle7">
-
+                   <p>Abdallah</p>
                </div>
                <div id="circle8">
-
+                   <p>Ottar</p>
                </div>
-
            </div>
-        <div class="center">
-            <a href="how-we-roll.html"><button>How we roll</button></a>
-            <a href="index.html"><button>Index</button></a>
-        </div>
 
+    </div>
 
-
+    <div class="center">
+        <a href="how-we-roll.html"><button>How we roll</button></a>
+        <a href="index.html"><button>Index</button></a>
     </div>
 
 
