@@ -6,6 +6,14 @@ Der diskuterte vi hvordan ting skulle se ut og man bruker funksjonene.
 Så delte vi oss opp i grupper, innad i gruppen.
 Hver av gruppene fikk ansvar for hver HTML-side. 
 
+FREDAG 24.sept
+- Vi ferdigstillte index.html
+- Lagde layout i How We Roll.html og HWR report.html
+- Begynte på utforming av elementer som senere skal kobles
+opp mot javakode
+- Implementerte navigasjonsknapper i alle html dokumenter
+
+
 
 
 =======
