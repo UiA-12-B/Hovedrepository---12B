@@ -213,6 +213,44 @@ a button {
     background: rgb(56, 56, 56);
     color: white;
 }
+
+.modal-content-ottar{
+    position: relative;
+    left: 0;
+    top: 10vh;
+    margin: auto;
+    padding: 20px;
+    width: 60%;
+    text-align: center;
+    min-height: 30vh;
+    width: 25rem;
+    border-radius: 30px;
+    padding: 0 5rem;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 20px 10px darkseagreen;
+    border: 2px solid darkseagreen;
+    background: rgb(56, 56, 56);
+    color: white;
+}
+
+.info-ottar li{
+   list-style-type: none;
+   padding: 10px;
+   font-family: Andale Mono, monospace;
+}
+
+.bold-ottar{
+   font-size: 18px;
+   color: darkseagreen;
+}
+
+.txt-ottar{
+   background: -webkit-linear-gradient(45deg, white, darkseagreen);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
 .modal-content-eirik {
     position: relative;
     left: 0;
@@ -507,18 +545,18 @@ a button {
                 <div class="bilde">
                     <div class="circle">
                         <!--Det som står i bilde-->
-                        <h1 style="color: white">Ottar</h1>
+                        <h1 style="color: white" class="txt-ottar">OW</h1>
                     </div> 
                 </div>
                 <div class="info">
                     <!--Tittel-->
-                    <h2 class='console-container'>Ottar</h2>
+                    <h2 class='console-container'>Ottar Worren</h2>
                     <br>
                     <!--Knapp for å aktiver modal-->
                     <button class="modal-button" href="#myModal8">Info</button>
                 </div>
                 <div class="Linker">     
-                    <a href="https://github.com/Eiriksb"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>    
+                    <a href="https://github.com/ONW10"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/2048px-Octicons-mark-github.svg.png"></a>
                 </div>
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
             </div>
@@ -527,11 +565,15 @@ a button {
     <div id="myModal8" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-content-ottar">
           <span class="lukk"></span>
           <!--Skriv litt om deg selv-->
-          <h1>Ditt navn</h1>
-          <p>Info</p>
+          <h1>Ottar Nordal Worren</h1>
+            <div class="info-ottar">
+                <li style="border-bottom: 2px solid black;"><span class="bold-ottar">Født:</span> 15.02.01 </li>
+                <li style="border-bottom: 2px solid black;"><span class="bold-ottar">By:</span> Kristiansand, Norge</li>
+                <li style="border-bottom: 2px solid black;"><span class="bold-ottar">Universitet:</span> UIA / Bachelor IT- og Informasjonssystemer</li>
+            </div>
         </div>
       
       </div>
