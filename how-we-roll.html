@@ -4,114 +4,173 @@
     <meta charset="UTF-8">
     <title>How we roll</title>
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg></script>
     <style>
-    *{
-        margin: 0;
-        padding:0;
-        font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-}
-    .container{
-        min-height: 100vh;
-        background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
-        display: flex;
-        align-items: center;
-        flex-direction:column;
-        justify-content: top;
-        padding: 5rem;
-}
+        *{
+            margin: 0;
+            padding:0;
+            font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+        }
 
-    .hwr-page h1{
-        font-size: 80px;
-        margin-top: -30px;
-        background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
-        text-transform: uppercase;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-}
-    .selector{
-        width: 350px;
-}
-    #selectField{
-        width: 100%;
-        padding: 10px 20px;
-        margin-top: 20px;
-        box-sizing: border-box;
-        background: rgba(255,255,255,0.7);
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-}
-    #namelist{
-        width: 100%;
-        background: rgba(255,255,255,0.7);
-        overflow: hidden;
-}
-    .options{
-        width: 100%;
-        padding: 15px 20px;
-        list-style: none;
-        box-sizing: border-box;
-        position: relative;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        cursor: pointer;
-}
-    .options:hover{
-        background: rgba(255,255,255,0.7);
-}
-    .hide{
-        visibility: hidden;
-}
-    .rotate{
-        transform: rotate(180deg);
-}
+        .container{
+            min-height: 100vh;
+            background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
+            display: flex;
+            align-items: center;
+            flex-direction:column;
+            justify-content:center;
+            padding: 5rem;
+        }
+        /*home button*/
+        .container .btn{
+            display: inline-block;
+            position: absolute;
+            left: 16px;
+            top: 10px;
+            padding: 13px;
+            border-radius:50%;
+            text-align: center;
+            background: #6D21AE;
+            box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
+            font-size: 25px;
+            color: #E6E6E6;
+        }
+        /*Tooltip will show the index.html when we move the mouse to the home icon*/
+        [data-tooltip]::after{
+            position: absolute;
+            width: 70px;
+            left: 75px;
+            top: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 2px;
+            border-radius: 3px;
+            content: attr(data-tooltip);
+            color: #ffffff;
+            background: #4C4452;
+            font-size: 12px;
 
-<<<<<<< Updated upstream
-    .question{
-        font-size: px;
-        font family:arial;
-        border-radius: 6px;
-        color:yellow;
-}
-    .slider{
-        display:flex;
-        align-items:center;
-        background:r;
-        width:800px;
-        opacity:0.75;
-}
-    .slider:hover{
-        opacity:1;
-        cursor:pointer;
-}
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+         [data-tooltip]:hover::after{
+            opacity: 1;
+            visibility: visible;
+        }
 
-.center{
-    display: flex;
-    justify-item: center;
-    margin-top: 750px;
-    position: absolute;
-    }
+        .hwr-page h1{
+            font-size: 80px;
+            margin-top: -30px;
+            background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
+            text-transform: uppercase;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-    a button{
-    padding: 1rem 2rem;
-    background: darkslateblue;
-    border: none;
-    color: white;
-    cursor: pointer;
-    border-radius: 30px;
-    text-align: center;
-    font-weight: bolder;
-    box-shadow: 0 20px 20px rgba(0,0,0,0.2);
-    }
+        .selector{
+            width: 350px;
+        }
 
+        #selectField{
+            width: 100%;
+            padding: 10px 20px;
+            margin-top: 20px;
+            box-sizing: border-box;
+            background: rgba(255,255,255,0.7);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
 
+        #namelist{
+            width: 100%;
+            background: rgba(255,255,255,0.7);
+            overflow: hidden;
+        }
+
+        .options{
+            width: 100%;
+            padding: 15px 20px;
+            list-style: none;
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+        }
+
+        .options:hover{
+            background: rgba(255,255,255,0.7);
+        }
+
+        .hide{
+            visibility: hidden;
+        }
+
+        .questionbox{
+            width:80%;
+            height:700px;
+            border-radius:50px;
+            background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+        }
+
+        .questionboxtitle{
+            padding-top:40px;
+            padding-bottom:20px;
+            font-size:50px;
+        }
+
+        .question{
+            font-size:20px;
+            border-radius: 6px;
+            color:yellow;
+        }
+
+        .slider{
+            padding-top:10px;
+            padding-bottom:10px;
+            display:flex;
+            align-items:center;
+            width:80%;
+            opacity:0.75;
+        }
+
+        .slider:hover{
+            opacity:1;
+            cursor:pointer;
+        }
+
+        .slider::-webkit-slider-runnable-track{
+
+        }
+
+        .slider::-webkit-slider-thumb{
+            width:10px;
+            background: #2C394C;
+        }
+
+        a button{
+            padding: 1rem 2rem;
+            background: darkslateblue;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 30px;
+            text-align: center;
+            font-weight: bolder;
+            box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+        }
     </style>
-
 </head>
 <body>
     <div class="container">
+        <a data-tooltip= "index.html" href="index.html"><button class="btn"><i class="fas fa-home"></i></button></a> <!--Home button-->
 
         <div class="hwr-page">
             <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
@@ -156,20 +215,50 @@
                 </li>
             </ul>
         </div>
-<<<<<<< Updated upstream
-        <div class="question">
-            <p>Hvor godt trives du i gruppen?</p>
+        <div class="questionbox">
+            <div class="questionboxtitle">
+                <p>Spørsmål</p>
+            </div>
+            <div class="question">
+                <p>Hvor godt trives du i gruppen?</p>
+            </div>
+            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <div class="question">
+                <p>Hvor godt trives du i gruppen?</p>
+            </div>
+            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <div class="question">
+                <p>Hvor godt trives du i gruppen?</p>
+            </div>
+            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <div class="question">
+                <p>Hvor godt trives du i gruppen?</p>
+            </div>
+            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <div class="question">
+                <p>Hvor godt trives du i gruppen?</p>
+            </div>
+            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <div class="question">
+                <p>Hvor godt trives du i gruppen?</p>
+            </div>
+            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <div class="question">
+                <p>Hvor godt trives du i gruppen?</p>
+            </div>
+            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <div class="question">
+                <p>Hvor godt trives du i gruppen?</p>
+            </div>
+            <input type="range" min="1" max="100" class="slider" id="mRange">
+
+            <div class="center">
+                <a href="index.html"><button>Index</button></a>
+                <a href="hwr-report.html"><button>Report</button></a>
+            </div>
         </div>
-        <input type="range" min="1" max="100" class="slider" id="mRange">
-        <div class="question">
-            <p></p>
     </div>
 
-        <div class="center">
-            <a href="how-we-roll.html"><button>How we roll</button></a>
-            <a href="hwr-report.html"><button>Report</button></a>
-
-        </div>
 
 <script>
     var selectField = document.getElementById("selectField");
