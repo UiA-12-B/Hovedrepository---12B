@@ -13,6 +13,10 @@ FREDAG 24.sept
 opp mot javakode
 - Implementerte navigasjonsknapper i alle html dokumenter
 
+FREDAG 01.oktober
+- Individuellt arbeid med visittkort
+- Integrering av sliders i How We Roll.html 
+- Delvis lagd oppsett for outputfelt HWR report.html
 
 
 
