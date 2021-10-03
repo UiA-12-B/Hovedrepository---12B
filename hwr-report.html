@@ -6,21 +6,22 @@
     <title>HWR § Report</title>
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
     <style>
-         *{
+*{
         margin: 0;
         padding:0;
         font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-}
-    .container{
-        min-height: 100vh;
+      }
+
+.container{
+        min-height: 130vh;
         background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
         display: flex;
         align-items: flex-start;
         justify-content: center;
         padding: 5rem;
-}
+    }
 
-    .circlesContainer{
+.circlesContainer{
         display: flex;
         align-items: flex-start;
         justify-content: center;
@@ -33,7 +34,7 @@
 
 
 
-    h1{
+h1{
     font-size: 3rem;
     text-align: center;
     background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
@@ -42,12 +43,8 @@
     -webkit-text-fill-color: transparent;
     }
 
-     {
-        text-align: center;
-        color: black;
-    }
 
-    #circle1{
+#circle1{
     background-color: darkslateblue;
     height: 30px;
     width: 30px;
@@ -57,7 +54,7 @@
     border: 1px solid black;
     }
 
-    #circle2{
+#circle2{
     background-color: darksalmon;
     height: 30px;
     width: 30px;
@@ -66,7 +63,8 @@
     margin-left: 65px;
     border: 1px solid black;
     }
-    #circle3{
+
+#circle3{
     background-color: darkcyan;
     height: 30px;
     width: 30px;
@@ -75,7 +73,8 @@
     margin-left: 65px;
     border: 1px solid black;
     }
-    #circle4{
+
+#circle4{
     background-color: darkviolet;
     height: 30px;
     width: 30px;
@@ -84,7 +83,8 @@
     margin-left: 65px;
     border: 1px solid black;
     }
-    #circle5{
+
+#circle5{
     background-color: darkgray;
     height: 30px;
     width: 30px;
@@ -93,7 +93,8 @@
     margin-left: 65px;
     border: 1px solid black;
     }
-    #circle6{
+
+#circle6{
     background-color: darkred;
     height: 30px;
     width: 30px;
@@ -102,7 +103,8 @@
     margin-left: 65px;
     border: 1px solid black;
     }
-    #circle7{
+
+#circle7{
     background-color: darkturquoise;
     height: 30px;
     width: 30px;
@@ -111,7 +113,8 @@
     margin-left: 65px;
     border: 1px solid black;
     }
-    #circle8{
+
+#circle8{
     background-color: darkseagreen;
     height: 30px;
     width: 30px;
@@ -121,19 +124,19 @@
     border: 1px solid black;
     }
 
-    .wrap{
+.wrap{
     display: inline-flex;
     position: absolute;
     }
 
-    .center{
+.center{
     display: flex;
     justify-item: center;
     margin-top: 750px;
     position: absolute;
     }
 
-    a button{
+a button{
     padding: 1rem 2rem;
     background: darkslateblue;
     border: none;
@@ -145,14 +148,31 @@
     box-shadow: 0 20px 20px rgba(0,0,0,0.2);
     transition: all 0.3s ease-in;
     margin: 10px;
+    margin-top: 150px;
     }
 
-   button:hover{
-   }
+p{
+    padding-top: 50px;
+    }
 
-   p{
-   padding-top: 50px;
-   }
+.data-container{
+    width: 120%;
+    height:800px;
+    border-radius:50px;
+    background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    position: absolute;
+    margin-top: 200px;
+    }
+
+.data-header{
+     padding-top:40px;
+     padding-bottom:20px;
+     font-size:50px;
+    }
+
 
 
     </style>
@@ -191,6 +211,11 @@
                    <p>Ottar</p>
                </div>
            </div>
+
+        <div class="data-container">
+            <div class="data-header">Resultat</div>
+
+        </div>
 
     </div>
     <div class="center">
