@@ -22,7 +22,7 @@
             padding: 5rem;
         }
         /*home button*/
-        .container .btn{
+        #btn{
             display: inline-block;
             position: absolute;
             left: 16px;
@@ -170,14 +170,14 @@
 </head>
 <body>
     <div class="container">
-        <a data-tooltip= "index.html" href="index.html"><button class="btn"><i class="fas fa-home"></i></button></a> <!--Home button-->
+        <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="btn"></i></a> <!--Home button-->
 
         <div class="hwr-page">
             <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
         </div>
         <div class="selector">
             <div id="selectField">
-                <p id="selectText" style="font-size:17.5px"><b>Velg navn</b></p> <!--style for seclectfield is updated-->
+                <p id="selectText" style="font-size:17.5px"><b>Velg navn</b></p> <!--style for seclectText is updated-->
                 <span><i class="fas fa-caret-down fa-2x" id="arrowIcon" style="color:#3C3B43"></i></span>
             </div>
             <ul id="namelist" class="hide">
