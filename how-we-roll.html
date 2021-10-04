@@ -179,7 +179,7 @@
             <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
         </div>
         <a><button id="start" style="display: block;">Start Quiz</button></a>
-        <a><button id="stopp" type="submit" style="display: none;">Stopp Quiz</button></a>
+        
         <div class="selector" id="select">
             <div id="selectField">
                 <p id="selectText" style="font-size:17.5px"><b>Velg navn</b></p> <!--style for seclectText is updated-->
@@ -259,6 +259,7 @@
             <input type="range" min="1" max="100" class="slider" id="mRange">
 
             <div class="center">
+                <a><button id="stopp" type="submit" style="display: none;">Stopp Quiz</button></a>
                 <a href="hwr-report.html"><button>Report</button></a>
             </div>
         </div>
@@ -300,7 +301,7 @@
     }
     else {
         spm.style.display = 'block';
-        stopp.style.display = 'block';
+        stopp.style.display = 'inline';
         select.style.display = 'none';
         start.style.display = 'none';
     }
@@ -319,7 +320,7 @@
     }
     else {
         spm.style.display = 'block';
-        stopp.style.display = 'block';
+        stopp.style.display = 'inline';
         select.style.display = 'none';
         start.style.display = 'none';
     }
