@@ -3,15 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Hovedside</title>
+    <title>HWR § Index</title>
     <style>
         html, body, .holster {
     font-family: -apple-system, BlinkMacSystemFont, sans-serif;
     min-height: 100vh;
     background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
-<<<<<<< HEAD
-   
-=======
->>>>>>> 7fb7318851e92b0139c68ce38149bc341ac8204b
 }
 
 .section {
@@ -259,6 +256,7 @@ a button {
     color: white;
 }
 
+
 .info-ottar li{
    list-style-type: none;
    padding: 10px;
@@ -302,6 +300,41 @@ a button {
 }
 .img-Abdallah{
     vertical-align: middle;
+    display: table-cell;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 3.4rem;
+}
+
+
+.modal-content-Linh{
+    position: relative;
+    left: 0;
+    top: 10vh;
+    margin: auto;
+    padding: 20px;
+    width: 60%;
+    text-align: center;
+    min-height: 30vh;
+    width: 25rem;
+    border-radius: 30px;
+    padding: 0 5rem;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 20px 10px #70BDFF;
+    background: rgb(56, 56, 56);
+    color: white;
+}
+.Linh-info{
+    padding-top: 5px;
+}
+.list-info-Linh li{
+    list-style-type: none;
+    padding: 5px;
+}
+.img-Linh{
+    vertival-align: middle;
     display: table-cell;
     height: 15rem;
     width: 15rem;
@@ -380,7 +413,7 @@ a button {
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
                     <div class="circle">
-                <!--Det som står i bilde-->
+                        <img class="img-Linh" src="/Bilder/Linh.jpg">
                         <h1 style="color: white">Linh</h1>
                     </div>
               </div>
@@ -401,13 +434,22 @@ a button {
     <div id="myModal2" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-content-Linh">
           <span class="lukk"></span>
           <!--Skriv litt om deg selv-->
-          <h1>Linh Phuong Tra</h1> <!--Name is updated-->
-          <p>Info</p>
+          <div class="Linh-info">
+              <h1>Linh Phuong Tra</h1> <!--Name is updated-->
+                  <div class="list-info-Linh">
+                      <li><span class="list-text" style="font-size:16px; font-weight: bold; color: #AAD4FF;">Født:</span> 04.11</li>
+                      <li><span class="list-text" style="font-size:16px; font-weight: bold; color: #AAD4FF;">By: </span> Ho Chi Minh, Vietnam</li>
+                      <li><span class="list-text" style="font-size: 16px; font-weight: bold; color: #AAD4FF;">Skole: </span> Universitet i Agder</li>
+                      <li><span class="list-text" style="font-size:16px; font-weight: bold; color:#AAD4FF;">Studium: </span> IT og Informasjonssystem Bachelor</li>
+                  </div>
+              </ul>
+
+          </div>
         </div>
-      
+
       </div>
     <section class="section section-1">
         <div class="container">
@@ -589,6 +631,7 @@ a button {
         <div class="modal-content-Abdallah">
           <span class="lukk"></span>
           <!--Skriv litt om deg selv-->
+<<<<<<< HEAD
           <div class="Abdallah-info">
               <h1> >Abdallah Gholam Bakir<</h1>
               <p>* 19 år</p>
@@ -596,6 +639,12 @@ a button {
               <p>* Studerer IT og informasjonssytemer på Uia</p>
           </div>
 
+=======
+          <h1> Abdallah Gholam Bakir</h1>
+          <p>* 19 år</p>
+            <p>* Kristiansand, Norge</p>
+            <p>* Studerer IT og informasjonssytemer på UiA</p>
+>>>>>>> 93abd6c178efe58022c4c8542667a52903964738
         </div>
       
       </div>
