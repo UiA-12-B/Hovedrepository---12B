@@ -182,7 +182,7 @@
         <div class="hwr-page">
             <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
         </div>
-        <a><button id="start" style="display: block;">Start Quiz</button></a>
+       <!-- <a><button id="start" style="display: block;">Start Quiz</button></a> -->
         
         <div class="selector" id="select">
             <div id="selectField">
@@ -225,45 +225,45 @@
             </ul>
         </div>
         
-        <div class="questionbox" id="spm">
+        <div class="questionbox" id="spm" style="display:flex;">
             <div class="questionboxtitle">
                 <p>Spørsmål</p>
             </div>
             <div class="question">
                 <p>Hvor godt trives du i gruppen?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <input type="range" min="1" max="100" class="slider" id="SPON">
             <div class="question">
                 <p>Føler du gruppen er effektiv?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <input type="range" min="1" max="100" class="slider" id="SPTW">
             <div class="question">
                 <p>Liker du å arbeide sent?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <input type="range" min="1" max="100" class="slider" id="SPTH">
             <div class="question">
                 <p>Liker du å arbeide tidlig?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <input type="range" min="1" max="100" class="slider" id="SPFO">
             <div class="question">
                 <p>Er kommunikasjonen i gruppen bra?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <input type="range" min="1" max="100" class="slider" id="SPFI">
             <div class="question">
                 <p>Hvor godt liker du å arbeide individuellt?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <input type="range" min="1" max="100" class="slider" id="SPSI">
             <div class="question">
                 <p>Hvor godt liker du å arbeide kollektivt?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <input type="range" min="1" max="100" class="slider" id="SPSE">
             <div class="question">
                 <p>Hvor høy er motivasjonen til gruppearbeidet?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="mRange">
+            <input type="range" min="1" max="100" class="slider" id="SPEI">
 
             <div class="center">
-                <a><button id="stopp" type="submit" style="display: none;">Stopp Quiz</button></a>
+               <!-- <a><button id="stopp" type="submit" style="display: none;">Stopp Quiz</button></a> -->
                 <a href="hwr-report.html"><button>Report</button></a>
             </div>
         </div>
@@ -331,38 +331,7 @@
 
      }
 
-     // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
-   // Example POST method implementation using fetch:
-   async function postData(url = '', data = {}) {
-       // Default options are marked with *
-       const response = await fetch(url, {
-           method: 'POST', // *GET, POST, PUT, DELETE, etc.
-           mode: 'cors', // no-cors, *cors, same-origin
-           cache: 'no-cache', // *default, no-cache, reload, force-cache,only-if-cached
-           credentials: 'same-origin', // include, *same-origin, omit
-           headers: {
-               'Content-Type': 'application/json',
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-           },
-           redirect: 'follow', // manual, *follow, error
-           referrerPolicy: 'no-referrer', // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-           body: JSON.stringify(data) // body data type must match"Content-Type"header
-       });
-       return response.json(); // parses JSON response into native JavaScriptobjects
-   }
 
-   function handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        const formJSON = Object.fromEntries(data.entries());
-        const results = document.querySelector('.results pre');
-        postData('https://bacit.info/', formJSON)
-        .then(data => {
-           results.innerText = JSON.stringify(data, null, 2);
-        });
-   }
-   const form = document.querySelector('form');
-   form.addEventListener('submit', handleSubmit);
 </script>
 </body>
 </html>
