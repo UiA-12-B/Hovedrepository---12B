@@ -2,338 +2,199 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>HWR § How We Roll</title>
-    <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
-    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" data-auto-replace-svg></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HowWeRoll prototype (lagring)</title>
+    <!-- Med denne filen ønsker vi å bevise at vi kan samle inn data ... -->
     <style>
-        *{
-            margin: 0;
-            padding:0;
-            font-family:-apple-system, BlinkMacSystemFont, sans-serif;
-        }
+    *{
+        margin: 0;
+        padding:0;
+        font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+    }
 
-        .container{
-            min-height: 100vh;
-            background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
-            display: flex;
-            align-items: center;
-            flex-direction:column;
-            justify-content:center;
-            padding: 5rem;
-        }
-        /*home button*/
-        #btn{
-            display: inline-block;
-            position: absolute;
-            left: 16px;
-            top: 10px;
-            padding: 13px;
-            border-radius:50%;
-            text-align: center;
-            background: #6D21AE;
-            box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
-            font-size: 25px;
-            color: #E6E6E6;
-        }
-        /*Tooltip will show the index.html when we move the mouse to the home icon*/
-        [data-tooltip]::after{
-            position: absolute;
-            width: 70px;
-            left: 75px;
-            top: 40px;
-            text-align: center;
-            box-sizing: border-box;
-            padding: 2px;
-            border-radius: 3px;
-            content: attr(data-tooltip);
-            color: #ffffff;
-            background: #4C4452;
-            font-size: 12px;
+    .container{
+        min-height: 100vh;
+        background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
+        display: flex;
+        align-items: center;
+        flex-direction:column;
+        justify-content:center;
+        padding: 5rem;
+    }
 
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-         [data-tooltip]:hover::after{
-            opacity: 1;
-            visibility: visible;
-        }
+    .hwr-page h1{
+        font-size: 80px;
+        margin-top: -80px;
+        background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
+        text-transform: uppercase;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 
-        .hwr-page h1{
-            font-size: 80px;
-            margin-top: -80px;
-            background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
-            text-transform: uppercase;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+    .questionbox{
+        width:80%;
+        height1000px;
+        border-radius:50px;
+        background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
+        display:flex;
+        flex-direction:column;
+        text-align: center;
+        align-items:center;
+    }
 
-        .selector{
-            width: 350px;
-            display: block;
-        }
+    .questionboxtitle{
+        font-size:50px;
+    }
 
-        #selectField{
-            width: 100%;
-            padding: 10px 20px;
-            margin-top: 20px;
-            box-sizing: border-box;
-            background: rgba(255,255,255,0.7);
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-        }
+    .question{
+        font-size:20px;
+        border-radius: 6px;
+        color:yellow;
+    }
 
-        #namelist{
-            width: 100%;
-            background: rgba(255,255,255,0.7);
-            overflow: hidden;
-        }
+    .slider{
+        padding-top:10px;
+        padding-bottom:10px;
+        width:80%;
+        opacity:0.75;
+    }
 
-        .options{
-            width: 100%;
-            padding: 15px 20px;
-            list-style: none;
-            box-sizing: border-box;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-        }
+    .slider:hover{
+        opacity:1;
+        cursor:pointer;
+    }
 
-        .options:hover{
-            background: rgba(255,255,255,0.7);
-        }
-
-        .hide{
-            visibility: hidden;
-        }
-
-        .questionbox{
-            width:80%;
-            height:700px;
-            border-radius:50px;
-            background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
-            display:flex;
-            flex-direction:column;
-            text-align: center;
-            align-items:center;
-            display: none;
-        }
-
-        .questionboxtitle{
-            padding-top:40px;
-            padding-bottom:20px;
-            font-size:50px;
-            color: #DCDFFF;
-            font-weight: bold;
-        }
-
-        .question{
-            font-size:20px;
-            border-radius: 6px;
-            color:#FCFCD4;
-        }
-
-        .slider{
-            padding-top:10px;
-            padding-bottom:10px;
-            align-items:center;
-            width:80%;
-            opacity:0.75;
-            margin-left: 100px;
-        }
-
-
-        .slider:hover{
-            opacity:1;
-            cursor:pointer;
-        }
-
-        .slider::-webkit-slider-runnable-track{
-
-        }
-
-        .slider::-webkit-slider-thumb{
-            -webkit-appearance: none;
-            width:10px;
-            background: #2C394C;
-        }
-
-        a button{
-            padding: 1rem 2rem;
-            background: darkslateblue;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 30px;
-            text-align: center;
-            font-weight: bolder;
-            box-shadow: 0 20px 20px rgba(0,0,0,0.2);
-            margin: 10px;
-        }
+    .button{
+        padding: 1rem 2rem;
+        background: darkslateblue;
+        border: none;
+        color: white;
+        cursor: pointer;
+        border-radius: 30px;
+        text-align: center;
+        font-weight: bolder;
+        box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+        margin: 10px;
+    }
     </style>
 </head>
 <body>
-    <div class="container">
-        <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="btn"></i></a> <!--Home button-->
-
-        <div class="hwr-page">
-            <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
+<div class="container">
+    <div class="hwr-page">
+        <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
+    </div>
+    <div class="questionbox">
+        <div class="questionboxtitle">
+            <p>Spørsmål</p>
         </div>
-       <!-- <a><button id="start" style="display: block;">Start Quiz</button></a> -->
-        
-        <div class="selector" id="select">
-            <div id="selectField">
-                <p id="selectText" style="font-size:17.5px"><b>Velg navn</b></p> <!--style for seclectText is updated-->
-                <span><i class="fas fa-caret-down fa-2x" id="arrowIcon" style="color:#3C3B43"></i></span>
-            </div>
-            <ul id="namelist" class="hide">
-                <li class="options" value="Eirik">
-                    <p>Eirik Bjørdal</p>
-                    <span><i class="fas fa-circle" style="color: darkslateblue"></i></span>
-                </li>
-                <li class="options" value="Linh">
-                    <p>Linh Tra</p>
-                    <span><i class="fas fa-circle" style="color: darksalmon"></i></span>
-                </li>
-                <li class="options" value="Laurits">
-                    <p>Laurits Lund</p>
-                    <span><i class="fas fa-circle" style="color: darkcyan"></i></span>
-                </li>
-                <li class="options" value="Robin">
-                    <p>Robin Finsådal</p>
-                    <span><i class="fas fa-circle" style="color: darkviolet"></i></span>
-                </li>
-                <li class="options" value="Markus">
-                    <p>Markus Fjelltun</p>
-                    <span><i class="fas fa-circle" style="color: darkgrey"></i></span>
-                </li>
-                <li class="options" vlaue="Elise">
-                    <p>Elise Tokmak</p>
-                    <span><i class="fas fa-circle" style="color: darkred"></i></span>
-                </li>
-                <li class="options" value="Abdallah">
-                    <p>Abdallah Bakir</p>
-                    <span><i class="fas fa-circle" style="color: darkturquoise"></i></span>
-                </li>
-                <li class="options" value="Ottar">
-                    <p>Ottar Worren</p>
-                    <span><i class="fas fa-circle" style="color: darkseagreen"></i></span>
-                </li>
-            </ul>
-        </div>
-        
-        <div class="questionbox" id="spm" style="display:flex;">
-            <div class="questionboxtitle">
-                <p>Spørsmål</p>
-            </div>
+        <form>
+            <p>
+                <label class="question">Velg et navn</label>
+                <select name="nameselector">
+                    <option value="robin">Robin</option>
+                    <option value="laurits">Laurits</option>
+                    <option value="eirik">Eirik</option>
+                    <option value="ottar">Ottar</option>
+                    <option value="markus">Markus</option>
+                    <option value="linh">Linh</option>
+                    <option value="abdallah">Abdallah</option>
+                    <option value="elise">Elise</option>
+                </select>
+            </p>
             <div class="question">
                 <p>Hvor godt trives du i gruppen?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="SPON">
+            <p>
+                <input class="slider" type="range" id="q1" name="q1" value="50">
+            </p>
             <div class="question">
                 <p>Føler du gruppen er effektiv?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="SPTW">
+            <p>
+                <input class="slider" type="range" id="q2" name="q2" value="50">
+            </p>
             <div class="question">
                 <p>Liker du å arbeide sent?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="SPTH">
+            <p>
+                <input class="slider" type="range" id="q3" name="q3" value="50">
+            </p>
             <div class="question">
                 <p>Liker du å arbeide tidlig?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="SPFO">
+            <p>
+                <input class="slider" type="range" id="q4" name="q4" value="50">
+            </p>
             <div class="question">
                 <p>Er kommunikasjonen i gruppen bra?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="SPFI">
+            <p>
+                <input class="slider" type="range" id="q5" name="q5" value="50">
+            </p>
             <div class="question">
                 <p>Hvor godt liker du å arbeide individuellt?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="SPSI">
+            <p>
+                <input class="slider" type="range" id="q6" name="q6" value="50">
+            </p>
             <div class="question">
                 <p>Hvor godt liker du å arbeide kollektivt?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="SPSE">
+            <p>
+                <input class="slider" type="range" id="q7" name="q7" value="50">
+            </p>
             <div class="question">
                 <p>Hvor høy er motivasjonen til gruppearbeidet?</p>
             </div>
-            <input type="range" min="1" max="100" class="slider" id="SPEI">
-
-            <div class="center">
-               <!-- <a><button id="stopp" type="submit" style="display: none;">Stopp Quiz</button></a> -->
-                <a href="hwr-report.html"><button>Report</button></a>
-            </div>
-        </div>
+            <p>
+                <input class="slider" type="range" id="q8" name="q8" value="50">
+            </p>
+            <button class="button" type="submit">Gjør noe</button>
+        </form>
     </div>
+    <div class="results">
+        <h2>Form Data</h2>
+        <pre></pre>
+    </div>
+</div>
+
+
 
 
 <script>
-    var button = document.getElementById("start")
-    var button2 = document.getElementById("stopp")
+   // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
+   // Example POST method implementation using fetch:
+   async function postData(url = '', data = {}) {
+       // Default options are marked with *
+       const response = await fetch(url, {
+           method: 'POST', // *GET, POST, PUT, DELETE, etc.
+           mode: 'cors', // no-cors, *cors, same-origin
+           cache: 'no-cache', // *default, no-cache, reload, force-cache,only-if-cached
+           credentials: 'same-origin', // include, *same-origin, omit
+           headers: {
+               'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+           },
+           redirect: 'follow', // manual, *follow, error
+           referrerPolicy: 'no-referrer', // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+           body: JSON.stringify(data) // body data type must match"Content-Type"header
+       });
+       return response.json(); // parses JSON response into native JavaScriptobjects
+   }
 
-    var selectField = document.getElementById("selectField");
-    var selectText = document.getElementById("selectText");
-    var options = document.getElementsByClassName("options");
-    var namelist = document.getElementById("namelist");
-    var arrowIcon = document.getElementById("arrowIcon");
-
-    selectField.onclick = function(){
-        namelist.classList.toggle("hide");
-        arrowIcon.classList.toggle("rotate");
-    }
-
-    for(option of options){
-        option.onclick = function(){
-            selectText.innerHTML = this.textContent;
-            namelist.classList.toggle("hide");
-            arrowIcon.classList.toggle("rotate");
-        }
-     }
-
-     button.onclick = function(){
-         var spm = document.getElementById("spm");
-         var select = document.getElementById("select");
-         var stopp = document.getElementById("stopp");
-         var start = document.getElementById("start");
-         if (spm.style.display !== 'none' && stopp.style.display !== 'none' && select.style.display !== 'block' && start.style.display !== 'block') {
-        spm.style.display = 'none';
-        stopp.style.display = 'none';
-        select.style.display = 'block';
-        start.style.display = 'block';
-    }
-    else {
-        spm.style.display = 'block';
-        stopp.style.display = 'inline';
-        select.style.display = 'none';
-        start.style.display = 'none';
-    }
-
-     }
-     button2.onclick = function(){
-         var spm = document.getElementById("spm");
-         var select = document.getElementById("select");
-         var stopp = document.getElementById("stopp");
-         var start = document.getElementById("start");
-         if (spm.style.display !== 'none' && stopp.style.display !== 'none' && select.style.display !== 'block' && start.style.display !== 'block') {
-        spm.style.display = 'none';
-        stopp.style.display = 'none';
-        select.style.display = 'block';
-        start.style.display = 'block';
-    }
-    else {
-        spm.style.display = 'block';
-        stopp.style.display = 'inline';
-        select.style.display = 'none';
-        start.style.display = 'none';
-    }
-
-     }
-
-
-</script>
+   function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const formJSON = Object.fromEntries(data.entries());
+        const results = document.querySelector('.results pre');
+        postData('https://bacit.info/', formJSON)
+        .then(data => {
+           results.innerText = JSON.stringify(data, null, 2);
+        });
+   }
+   const form = document.querySelector('form');
+   form.addEventListener('submit', handleSubmit);
+  </script>
 </body>
 </html>
