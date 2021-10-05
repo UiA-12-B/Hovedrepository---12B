@@ -214,6 +214,28 @@ a button {
     background: rgb(56, 56, 56);
     color: white;
 }
+.modal-content-Abdallah{
+    position: relative;
+    left: 0;
+    top: 10vh;
+    margin: auto;
+    padding: 20px;
+    width: 60%;
+    text-align: center;
+    min-height: 30vh;
+    width: 25rem;
+    border-radius: 30px;
+    padding: 0 5rem;
+    box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
+    box-shadow: 0px 0px 20px 10px #F8EE82;
+
+    background: rgb(56, 56, 56);
+    color: white;
+}
+
+.Abdallah-info h1{
+    padding-top: 10px;
+}
 
 .modal-content-ottar{
     position: relative;
@@ -276,8 +298,18 @@ a button {
 .modal-content-eirik h1 {
     padding-top: 20px;
 }
+.img-Abdallah{
+    vertical-align: middle;
+    display: table-cell;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 3.4rem;
+}
 
-.modal-content-linh{
+
+.modal-content-Linh{
     position: relative;
     left: 0;
     top: 10vh;
@@ -290,12 +322,25 @@ a button {
     border-radius: 30px;
     padding: 0 5rem;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 20px 10px #A4E4FF;
+    box-shadow: 0px 0px 20px 10px #70BDFF;
     background: rgb(56, 56, 56);
     color: white;
 }
 .Linh-info{
     padding-top: 5px;
+}
+.list-info-Linh li{
+    list-style-type: none;
+    padding: 5px;
+}
+.img-Linh{
+    vertival-align: middle;
+    display: table-cell;
+    height: 15rem;
+    width: 15rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 3.4rem;
 }
 
 .img-elise{
@@ -368,7 +413,7 @@ a button {
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
                     <div class="circle">
-                <!--Det som står i bilde-->
+                        <img class="img-Linh" src="/Bilder/Linh.jpg">
                         <h1 style="color: white">Linh</h1>
                     </div>
               </div>
@@ -389,19 +434,22 @@ a button {
     <div id="myModal2" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content-linh">
+        <div class="modal-content-Linh">
           <span class="lukk"></span>
           <!--Skriv litt om deg selv-->
           <div class="Linh-info">
               <h1>Linh Phuong Tra</h1> <!--Name is updated-->
-              <p>Født: 04.11</p>
-              <p>By: Harstad, Norge</p>
-              <p>Student på Universitet i Agder</p>
-              <p>Studium: IT og Informasjonssystem Bachelor</p>
+                  <div class="list-info-Linh">
+                      <li><span class="list-text" style="font-size:16px; font-weight: bold; color: #AAD4FF;">Født:</span> 04.11</li>
+                      <li><span class="list-text" style="font-size:16px; font-weight: bold; color: #AAD4FF;">By: </span> Ho Chi Minh, Vietnam</li>
+                      <li><span class="list-text" style="font-size: 16px; font-weight: bold; color: #AAD4FF;">Skole: </span> Universitet i Agder</li>
+                      <li><span class="list-text" style="font-size:16px; font-weight: bold; color:#AAD4FF;">Studium: </span> IT og Informasjonssystem Bachelor</li>
+                  </div>
+              </ul>
 
           </div>
         </div>
-      
+
       </div>
     <section class="section section-1">
         <div class="container">
@@ -433,8 +481,11 @@ a button {
         <div class="modal-content">
           <span class="lukk"></span>
           <!--Skriv litt om deg selv-->
-          <h1>Ditt navn</h1>
-          <p>Info</p>
+          <h1>Laurits Jonas Lund</h1>
+          <p>22.05.1997</p>
+            <p>Larvik</p>
+            <p>Universitetet i Agder</p>
+            <p>IT og informasjonssystemer</p>
         </div>
       
       </div>
@@ -556,6 +607,7 @@ a button {
             <div class="card">
                  <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil--> 
                 <div class="bilde">
+                    <img class="img-Abdallah" src="/Bilder/Bilde Abdallah 01.jpg">
                     <div class="circle">
                         
                         <!--Det som står i bilde-->
@@ -579,13 +631,16 @@ a button {
     <div id="myModal7" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="modal-content-Abdallah">
           <span class="lukk"></span>
           <!--Skriv litt om deg selv-->
-          <h1> Abdallah Gholam Bakir</h1>
-          <p>* 19 år</p>
-            <p>* Kristiansand, Norge</p>
-            <p>* Studerer IT og informasjonssytemer på UiA</p>
+
+          <div class="Abdallah-info">
+              <h1> >Abdallah Gholam Bakir<</h1>
+              <p>* 19 år</p>
+              <p>* Kristiansand, Norge</p>
+              <p>* Studerer IT og informasjonssytemer på Uia</p>
+          </div>
         </div>
       
       </div>
