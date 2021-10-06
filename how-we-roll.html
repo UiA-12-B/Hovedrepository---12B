@@ -24,7 +24,7 @@
         padding: 5rem;
     }
     /*home button*/
-    #btn{
+    #homebutton{
         display: inline-block;
         position: absolute;
         left: 16px;
@@ -36,6 +36,11 @@
         box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
         font-size: 25px;
         color: #E6E6E6;
+    }
+    /*Style for Homebutton - the light will be shown when we move the mouse to the Homebutton in order to know that we have clicked on that or not*/
+    #homebutton:focus,
+    #homebutton:hover{
+        border: 2px solid #DCB0FF;
     }
      /*Tooltip will show the index.html when we move the mouse to the home icon*/
     [data-tooltip]::after{
@@ -58,6 +63,7 @@
      [data-tooltip]:hover::after{
         opacity: 1;
         visibility: visible;
+
      }
     .hwr-page h1{
         font-size: 80px;
@@ -71,7 +77,7 @@
 
     .questionbox{
         width:80%;
-        height:800px;
+        height:820px;
         border-radius:50px;
         background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
         display:flex;
@@ -95,7 +101,7 @@
         border-radius: 6px;
         color:#E3E0F3;
     }
-
+    /*Style for name selecting field*/
     .nameselector{
         padding: 8px 12px;
         border-radius: 7px;
@@ -109,11 +115,13 @@
     .nameselector:focus,
     .nameselector:hover{
         outline: none;
-        border: 2px solid #593796;
+        border: 4px solid #BE93FD;
+        letter-spacing: 1px;
+        font-size: 20px;
     }
     
-    .topd{
-        margin-bottom: 60px;
+    .selectbox{
+        margin-bottom: 30px;
     }
 
     .slider{
@@ -121,32 +129,41 @@
         padding-bottom:10px;
         width:80%;
         opacity:0.75;
+        background: #d3d3d3;
+        outline: none;
+        -webkit-transition: .2s;
+        transition: opacity .2s;
     }
 
     .slider:hover{
         opacity:1;
-        cursor:pointer;
+        cursor: pointer;
     }
 
     .button{
+        margin: 10px;
         padding: 1rem 2rem;
         background: darkslateblue;
-        border: none;
-        color: white;
-        cursor: pointer;
         border-radius: 30px;
+        box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+        border: 2px solid #492986;
+        color: white;
         text-align: center;
         font-weight: bolder;
-        box-shadow: 0 20px 20px rgba(0,0,0,0.2);
-        margin: 10px;
+        cursor: pointer;
     }
+    .button:focus,
+    .button:hover{
+        outline:none;
+        border: 2px solid #DEB2FF;
 
+    }
 
     </style>
 </head>
 <body>
 <div class="container">
-    <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="btn"></i></a>
+    <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="homebutton"></i></a>
     <div class="hwr-page">
         <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
     </div>
@@ -155,11 +172,10 @@
             <p>Spørsmål</p>
         </div>
         <form>
-            <p class="topd">
-
+            <p class="selectbox">
                 <select class="nameselector">
-                    <option value ="select" style="text-align: center"><b>-Valg et navn-</b></option>
-                    <option value="robin">Abdallah Gloham Bakir</option>
+                    <option value ="disable-select" style="text-align: center"><b>-Valg et navn-</b></option>
+                    <option value="robin">Abdallah Gholam Bakir</option>
                     <option value="laurits">Elise A.Tokmak</option>
                     <option value="eirik">Eirik Bjørdal</option>
                     <option value="ottar">Laurits Jonas Lund</option>
