@@ -23,10 +23,45 @@
         justify-content:center;
         padding: 5rem;
     }
-
+    /*home button*/
+    #btn{
+        display: inline-block;
+        position: absolute;
+        left: 16px;
+        top: 20px;
+        padding: 13px;
+        border-radius:50%;
+        text-align: center;
+        background: #6D21AE;
+        box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
+        font-size: 25px;
+        color: #E6E6E6;
+    }
+     /*Tooltip will show the index.html when we move the mouse to the home icon*/
+    [data-tooltip]::after{
+        position: absolute;
+        width: 70px;
+        left: 75px;
+        top: 40px;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 2px;
+        border-radius: 3px;
+        content: attr(data-tooltip);
+        color: #ffffff;
+        background: #4C4452;
+        font-size: 12px;
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.3s;
+    }
+     [data-tooltip]:hover::after{
+        opacity: 1;
+        visibility: visible;
+     }
     .hwr-page h1{
         font-size: 80px;
-        margin-top: -80px;
+        margin-top: -50px;
         background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
         text-transform: uppercase;
         -webkit-background-clip: text;
@@ -36,7 +71,7 @@
 
     .questionbox{
         width:80%;
-        height1000px;
+        height:800px;
         border-radius:50px;
         background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
         display:flex;
@@ -47,21 +82,38 @@
     }
 
     .questionboxtitle{
-        font-size:50px;
-        color: white;
+        font-size:40px;
+        color: #E1DCF3;
         text-transform: uppercase;
         font-weight: bold;
         padding: 20px;
     }
 
     .question{
+        margin-top: 5px;
         font-size:20px;
         border-radius: 6px;
-        color:yellow;
+        color:#E3E0F3;
     }
 
+    .nameselector{
+        padding: 8px 12px;
+        border-radius: 7px;
+        box-sizing: border-box;
+        font-weight: bold;
+        font-family: sans-serif;
+        font-size: 20px;
+        color: #5D5D60;
+        background:#EBEAEE;
+    }
+    .nameselector:focus,
+    .nameselector:hover{
+        outline: none;
+        border: 2px solid #593796;
+    }
+    
     .topd{
-    margin-bottom: 60px;
+        margin-bottom: 60px;
     }
 
     .slider{
@@ -89,50 +141,7 @@
         margin: 10px;
     }
 
-    /*home button*/
-        #btn{
-            display: inline-block;
-            position: absolute;
-            left: 16px;
-            top: 20px;
-            padding: 13px;
-            border-radius:50%;
-            text-align: center;
-            background: #6D21AE;
-            box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
-            font-size: 25px;
-            color: #E6E6E6;
-        }
-        /*Tooltip will show the index.html when we move the mouse to the home icon*/
-        [data-tooltip]::after{
-            position: absolute;
-            width: 70px;
-            left: 75px;
-            top: 40px;
-            text-align: center;
-            box-sizing: border-box;
-            padding: 2px;
-            border-radius: 3px;
-            content: attr(data-tooltip);
-            color: #ffffff;
-            background: #4C4452;
-            font-size: 12px;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-         [data-tooltip]:hover::after{
-            opacity: 1;
-            visibility: visible;
-        }
 
-        select{
-        padding: 7px;
-        font-weight: bold;
-        font-family: sans-serif;
-        font-size: 20px;
-        color: grey;
-        }
     </style>
 </head>
 <body>
@@ -147,16 +156,17 @@
         </div>
         <form>
             <p class="topd">
-                <label class="question">Velg et navn</label>
-                <select name="nameselector">
-                    <option value="robin" style="color: red;">Robin</option>
-                    <option value="laurits">Laurits</option>
-                    <option value="eirik">Eirik</option>
-                    <option value="ottar">Ottar</option>
-                    <option value="markus">Markus</option>
-                    <option value="linh">Linh</option>
-                    <option value="abdallah">Abdallah</option>
-                    <option value="elise">Elise</option>
+
+                <select class="nameselector">
+                    <option value ="select" style="text-align: center"><b>-Valg et navn-</b></option>
+                    <option value="robin">Abdallah Gloham Bakir</option>
+                    <option value="laurits">Elise A.Tokmak</option>
+                    <option value="eirik">Eirik Bjørdal</option>
+                    <option value="ottar">Laurits Jonas Lund</option>
+                    <option value="markus">Linh Phuong Tra</option>
+                    <option value="linh">Markus Fjelltun</option>
+                    <option value="abdallah">Robin Finsådal</option>
+                    <option value="elise">Ottar Nordal Worren</option>
                 </select>
             </p>
             <div class="question">
