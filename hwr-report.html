@@ -250,7 +250,7 @@ p{
         <div class="data-container">
             <div class="data-header">Resultat</div>
                <div id="debug"></div>
-               <canvas id="report"></canvas>-->
+               <canvas id="report"></canvas>
 
             <script>
    <!-- Her skrives kode i JavaScript som "gir liv" til bilde på skjermen. -->
@@ -259,16 +259,10 @@ p{
     .then(response => response.json())
     .then(data => console.log(data));
 
-    fetch('https://bacit.info/hwr/20210926162029-a89356bb617d3bbf870649c08570427e.json')
-    .then(response => response.json())
-    .then(data => console.log(data));
-
-
-
     var canvas = document.getElementById('report');
     var context = canvas.getContext('2d');
     canvas.width = 700;
-    canvas.height = 1000;
+    canvas.height = 500;
 
 
     fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
