@@ -32,6 +32,14 @@ MANDAG 04.oktober
 - Videre arbeid med output-feltet HWR report.html
 - Videre arbeid med ferdigstilling av visittkort
 
+TIRSDAG 05.oktober
+- Lagt inn javascript i How We Roll.html, og fått
+innhenting av data til å være funksjonell.
+- Startet på implementering av javascript i hwr-report.html
+
+ONSDAG 06.oktober
+- Ferdigstillt javascriptet i hwr-report.html
+- Div. finpuss på html og css
 
 
 
