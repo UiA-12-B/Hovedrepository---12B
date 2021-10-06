@@ -170,7 +170,8 @@
         </div>
         <form>
             <p class="selectbox">
-                <select class="nameselector" name="name">
+                <select class="nameselector" id="store-name" name="name-option">
+                    <option value="" id="name" style="text-align:center; font-weight:bold">-Velg et navn-</option>
                     <option value="Abdallah Bakir" id="abdallah">Abdallah Gloham Bakir</option>
                     <option value="Elise Tokmak" id="elise">Elise A.Tokmak</option>
                     <option value="Eirik Bjørdal" id="eirik">Eirik Bjørdal</option>
@@ -229,7 +230,7 @@
             <p>
                 <input class="slider" type="range" id="q8" name="q8" value="50">
             </p>
-            <button class="button" type="submit">Submit</button>
+            <button class="button" id="submitbtn" disabled="disabled" type="submit">Submit</button>
             <button class="button" onclick="window.location.href='hwr-report.html'">Report</button>
         </form>
     </div>
@@ -265,6 +266,7 @@
 
    function handleSubmit(event) {
         event.preventDefault();
+
         const data = new FormData(event.target);
         const formJSON = Object.fromEntries(data.entries());
         const results = document.querySelector('.results pre');
@@ -275,6 +277,22 @@
    }
    const form = document.querySelector('form');
    form.addEventListener('submit', handleSubmit);
+
+    const selectbox = document.querySelector('#store-name');
+
+    selectbox.onchange = function(){
+        var submitbtn = document.getElementById('submitbtn');
+
+        if(selectbox.value==""){
+           submitbtn.disabled = true
+        } else {
+           submitbtn.disabled = false
+        }
+    }
+
+
+
+
   </script>
 </body>
 </html>
