@@ -157,16 +157,16 @@
         <form>
             <p class="topd">
 
-                <select class="nameselector">
+                <select class="nameselector" name="name">
                     <option value ="select" style="text-align: center"><b>-Valg et navn-</b></option>
-                    <option value="robin">Abdallah Gloham Bakir</option>
-                    <option value="laurits">Elise A.Tokmak</option>
-                    <option value="eirik">Eirik Bjørdal</option>
-                    <option value="ottar">Laurits Jonas Lund</option>
-                    <option value="markus">Linh Phuong Tra</option>
-                    <option value="linh">Markus Fjelltun</option>
-                    <option value="abdallah">Robin Finsådal</option>
-                    <option value="elise">Ottar Nordal Worren</option>
+                    <option value="Robin" id="robin">Abdallah Gloham Bakir</option>
+                    <option value="Laurits" id="laurits">Elise A.Tokmak</option>
+                    <option value="Eirik" id="eirik">Eirik Bjørdal</option>
+                    <option value="Ottar" id="ottar">Laurits Jonas Lund</option>
+                    <option value="Markus" id="markus">Linh Phuong Tra</option>
+                    <option value="Linh" id="linh">Markus Fjelltun</option>
+                    <option value="Abdallah" id="abdallah">Robin Finsådal</option>
+                    <option value="Elise" id="elise">Ottar Nordal Worren</option>
                 </select>
             </p>
             <div class="question">
@@ -218,11 +218,9 @@
                 <input class="slider" type="range" id="q8" name="q8" value="50">
             </p>
             <button class="button" type="submit">Submit</button>
-            <button class="button" type="submit" onclick="window.location.href='hwr-report.html'">Report</button>
         </form>
-
+        <a><button class="button" style="margin=30px;" onclick="window.location.href='hwr-report.html'">Report</button></a>
     </div>
-
    <div class="results">
         <h2>Form Data</h2>
         <pre></pre>
