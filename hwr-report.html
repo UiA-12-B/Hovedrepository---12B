@@ -143,12 +143,18 @@ a button{
     color: white;
     cursor: pointer;
     border-radius: 30px;
+    border: 2px solid #492986;
     text-align: center;
     font-weight: bolder;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2);
     transition: all 0.3s ease-in;
     margin: 10px;
     margin-top: 150px;
+    }
+.hrwbutton:focus,
+.hwrbutton:hover{
+    outline:none;
+    border: 2px solid #DEB2FF;
     }
 
 p{
@@ -169,54 +175,58 @@ p{
 
 .data-header{
      font-size:50px;
-        color: white;
-        text-transform: uppercase;
-        font-weight: bold;
-        padding: 20px;
+     color: white;
+     text-transform: uppercase;
+     font-weight: bold;
+     padding: 20px;
     }
 
 /*home button*/
-        #btn{
-            display: inline-block;
-            position: absolute;
-            left: 16px;
-            top: 20px;
-            padding: 13px;
-            border-radius:50%;
-            text-align: center;
-            background: #6D21AE;
-            box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
-            font-size: 25px;
-            color: #E6E6E6;
-        }
-        /*Tooltip will show the index.html when we move the mouse to the home icon*/
-        [data-tooltip]::after{
-            position: absolute;
-            width: 70px;
-            left: 75px;
-            top: 40px;
-            text-align: center;
-            box-sizing: border-box;
-            padding: 2px;
-            border-radius: 3px;
-            content: attr(data-tooltip);
-            color: #ffffff;
-            background: #4C4452;
-            font-size: 12px;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-         [data-tooltip]:hover::after{
-            opacity: 1;
-            visibility: visible;
+#homebutton{
+     display: inline-block;
+     position: absolute;
+     left: 16px;
+     top: 20px;
+     padding: 13px;
+     border-radius:50%;
+     text-align: center;
+     background: #6D21AE;
+     box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
+     font-size: 25px;
+     color: #E6E6E6;
+     }
+/*Tooltip will show the index.html when we move the mouse to the home icon*/
+[data-tooltip]::after{
+      position: absolute;
+      width: 70px;
+      left: 75px;
+      top: 40px;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 2px;
+      border-radius: 3px;
+      content: attr(data-tooltip);
+      color: #ffffff;
+      background: #4C4452;
+      font-size: 12px;
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s;
+      }
+[data-tooltip]:hover::after{
+       opacity: 1;
+       visibility: visible;
+       }
+ #homebutton:focus,
+        #homebutton:hover{
+        border: 2px solid #DCB0FF;
         }
     </style>
 </head>
 
 <body>
 <div class="container">
-    <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="btn"></i></a>
+    <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="homebutton"></i></a>
     <div class="circlesContainer">
         <h1>Deltagere - 12B</h1>
 
@@ -410,7 +420,7 @@ p{
         </div>
     </div>
     <div class="center">
-        <a href="how-we-roll.html"><button>How we roll</button></a>
+        <a href="how-we-roll.html"><button class="hwrbutton">How we roll</button></a>
     </div>
 </div>
 
