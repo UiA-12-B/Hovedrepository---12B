@@ -267,6 +267,8 @@ p{
 
     var canvas = document.getElementById('report');
     var context = canvas.getContext('2d');
+    canvas.width = 700;
+    canvas.height = 1000;
 
 
     fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
@@ -279,39 +281,45 @@ p{
       var context = canvas.getContext('2d');
 
       context.font = '14px serif';
-      context.fillText('dorn', 30, 24);
-      context.fillText('cora', 30, 74);
+      context.fillText('Hvor godt trives du i gruppen?', 220, 20);
+      context.fillText('q2', 220, 70);
+      context.fillText('q3', 220, 120);
+      context.fillText('q4', 220, 170);
+      context.fillText('q5', 220, 220);
+      context.fillText('q6', 220, 270);
+      context.fillText('q7', 220, 320);
+      context.fillText('q8', 220, 370);
+
 
       context.beginPath();
-      context.moveTo(70,20);
-      context.lineTo(170,20);
+      context.moveTo(220,40);
+      context.lineTo(480,40);
 
-      context.moveTo(70,70);
-      context.lineTo(170,70);
+      context.moveTo(220,90);
+      context.lineTo(480,90);
 
-      context.moveTo(70,120);
-      context.lineTo(170,120);
+      context.moveTo(220,140);
+      context.lineTo(480,140);
 
-      context.moveTo(70,170);
-      context.lineTo(170,170);
+      context.moveTo(220,190);
+      context.lineTo(480,190);
 
-      context.moveTo(70,220);
-      context.lineTo(170,220);
+      context.moveTo(220,240);
+      context.lineTo(480,240);
 
-      context.moveTo(70,270);
-      context.lineTo(170,270);
+      context.moveTo(220,290);
+      context.lineTo(480,290);
 
-      context.moveTo(70,320);
-      context.lineTo(170,320);
+      context.moveTo(220,340);
+      context.lineTo(480,340);
 
-      context.beginPath();
-      context.moveTo(70,70);
-      context.lineTo(170,70);
+      context.moveTo(220,390);
+      context.lineTo(480,390);
       context.stroke();
 
 
-      var X = 70 + parseInt(data.q1, 10);
-      var Y = 20;
+      var X = 220 + parseInt(data.q1, 26);
+      var Y = 40;
       var R = 5;
       context.beginPath();
       context.arc(X, Y, R, 0, 2*Math.PI, false);
@@ -322,8 +330,8 @@ p{
       context.stroke();
       //context.closePath();
 
-      var X = 70 + parseInt(data.q2, 10);
-      var Y = 70;
+      var X = 220 + parseInt(data.q2, 26);
+      var Y = 90;
       var R = 5;
       context.beginPath();
       context.arc(X, Y, R, 0, 2*Math.PI, false);
@@ -333,8 +341,8 @@ p{
       context.strokeStyle = "black";
       context.stroke();
 
-      var X = 70 + parseInt(data.q3, 10);
-      var Y = 120;
+      var X = 220 + parseInt(data.q3, 26);
+      var Y = 140;
       var R = 5;
       context.beginPath();
       context.arc(X, Y, R, 0, 2*Math.PI, false);
@@ -344,8 +352,8 @@ p{
       context.strokeStyle = "black";
       context.stroke();
 
-      var X = 70 + parseInt(data.q4, 10);
-      var Y = 170;
+      var X = 220 + parseInt(data.q4, 26);
+      var Y = 190;
       var R = 5;
       context.beginPath();
       context.arc(X, Y, R, 0, 2*Math.PI, false);
@@ -355,8 +363,8 @@ p{
       context.strokeStyle = "black";
       context.stroke();
 
-      var X = 70 + parseInt(data.q5, 10);
-      var Y = 220;
+      var X = 220 + parseInt(data.q5, 26);
+      var Y = 240;
       var R = 5;
       context.beginPath();
       context.arc(X, Y, R, 0, 2*Math.PI, false);
@@ -366,8 +374,8 @@ p{
       context.strokeStyle = "black";
       context.stroke();
 
-      var X = 70 + parseInt(data.q6, 10);
-      var Y = 270;
+      var X = 220 + parseInt(data.q6, 26);
+      var Y = 290;
       var R = 5;
       context.beginPath();
       context.arc(X, Y, R, 0, 2*Math.PI, false);
@@ -377,8 +385,8 @@ p{
       context.strokeStyle = "black";
       context.stroke();
 
-      var X = 70 + parseInt(data.q7, 10);
-      var Y = 320;
+      var X = 220 + parseInt(data.q7, 26);
+      var Y = 340;
       var R = 5;
       context.beginPath();
       context.arc(X, Y, R, 0, 2*Math.PI, false);
@@ -388,8 +396,8 @@ p{
       context.strokeStyle = "black";
       context.stroke();
 
-      var X = 70 + parseInt(data.q8, 10);
-      var Y = 370;
+      var X = 220 + parseInt(data.q8, 26);
+      var Y = 390;
       var R = 5;
       context.beginPath();
       context.arc(X, Y, R, 0, 2*Math.PI, false);
