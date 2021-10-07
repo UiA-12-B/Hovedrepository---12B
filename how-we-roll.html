@@ -171,7 +171,7 @@
         <form>
             <p class="selectbox">
                 <select class="nameselector" id="store-name" name="name-option">
-                    <option value="" id="name" style="text-align:center; font-weight:bold">-Velg et navn-</option>
+                    <option value="" style="text-align:center; font-weight:bold">-Velg et navn-</option>
                     <option value="Abdallah Bakir" id="abdallah">Abdallah Gloham Bakir</option>
                     <option value="Elise Tokmak" id="elise">Elise A.Tokmak</option>
                     <option value="Eirik Bjørdal" id="eirik">Eirik Bjørdal</option>
@@ -244,40 +244,6 @@
 
 
 <script>
-   // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
-   // Example POST method implementation using fetch:
-   async function postData(url = '', data = {}) {
-       // Default options are marked with *
-       const response = await fetch(url, {
-           method: 'POST', // *GET, POST, PUT, DELETE, etc.
-           mode: 'cors', // no-cors, *cors, same-origin
-           cache: 'no-cache', // *default, no-cache, reload, force-cache,only-if-cached
-           credentials: 'same-origin', // include, *same-origin, omit
-           headers: {
-               'Content-Type': 'application/json',
-                // 'Content-Type': 'application/x-www-form-urlencoded',
-           },
-           redirect: 'follow', // manual, *follow, error
-           referrerPolicy: 'no-referrer', // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-           body: JSON.stringify(data) // body data type must match"Content-Type"header
-       });
-       return response.json(); // parses JSON response into native JavaScriptobjects
-   }
-
-   function handleSubmit(event) {
-        event.preventDefault();
-
-        const data = new FormData(event.target);
-        const formJSON = Object.fromEntries(data.entries());
-        const results = document.querySelector('.results pre');
-        postData('https://bacit.info/', formJSON)
-        .then(data => {
-           results.innerText = JSON.stringify(data, null, 2);
-        });
-   }
-   const form = document.querySelector('form');
-   form.addEventListener('submit', handleSubmit);
-
     const selectbox = document.querySelector('#store-name');
 
     selectbox.onchange = function(){
@@ -290,9 +256,28 @@
         }
     }
 
+    async function postData(url = '', data = {}) {
+        const response = await fetch(url, {
+            method: 'POST', mode: 'cors', cache: 'no-cache', credentials: 'same-origin', headers: {
+                'Content-Type': 'application/json',
+            },
+            redirect: 'follow', referrerPolicy: 'no-referrer', body: JSON.stringify(data)
+        });
+        return response.json();
+    }
 
-
-
+    function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const formJSON = Object.fromEntries(data.entries());
+        const results = document.querySelector('.results pre');
+        postData('https://bacit.info/', formJSON)
+        .then(data => {
+            results.innerText = JSON.stringify(data, null, 2);
+        });
+   }
+   const form = document.querySelector('form');
+   form.addEventListener('submit', handleSubmit);
   </script>
 </body>
 </html>
