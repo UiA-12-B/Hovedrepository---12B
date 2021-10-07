@@ -172,7 +172,7 @@
             <!--Here is list of name-->
             <p class="selectbox">
                 <select class="nameselector" id="store-name" name="name-option">
-                    <option value="" id="name" style="text-align:center; font-weight:bold">-Velg et navn-</option>
+                    <option value="" style="text-align:center; font-weight:bold">-Velg et navn-</option>
                     <option value="Abdallah Bakir" id="abdallah">Abdallah Gloham Bakir</option>
                     <option value="Elise Tokmak" id="elise">Elise A.Tokmak</option>
                     <option value="Eirik Bjørdal" id="eirik">Eirik Bjørdal</option>
@@ -245,6 +245,7 @@
 </div>
 
 <script>
+
    // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
    // Example POST method implementation using fetch:
    async function postData(url = '', data = {}) {
@@ -279,6 +280,7 @@
    form.addEventListener('submit', handleSubmit);
 
         //Disable Submitbutton when we do not select any name so that data will not be generated
+
     const selectbox = document.querySelector('#store-name');
     selectbox.onchange = function(){
         var submitbtn = document.getElementById('submitbtn');
@@ -288,9 +290,6 @@
            submitbtn.disabled = false
         }
     }
-
-
-
 
   </script>
 </body>
