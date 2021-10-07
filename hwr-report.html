@@ -27,7 +27,7 @@
             justify-content: center;
             background-color: #2C394C;
             height: 175px;
-            width: 900px;
+            width: 1100px;
             border-radius: 10px;
             position: absolute;
         }
@@ -43,8 +43,8 @@
 
         #circle1{
             background-color: darkslateblue;
-            height: 30px;
-            width: 30px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             margin-top: 80px;
             margin-left: 0vh;
@@ -53,8 +53,8 @@
 
         #circle2{
             background-color: darksalmon;
-            height: 30px;
-            width: 30px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             margin-top: 80px;
             margin-left: 65px;
@@ -63,28 +63,29 @@
 
         #circle3{
             background-color: darkcyan;
-            height: 30px;
-            width: 30px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             margin-top: 80px;
             margin-left: 65px;
             border: 1px solid black;
         }
 
-        #circle4{
+        .circle4{
             background-color: darkviolet;
-            height: 30px;
-            width: 30px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             margin-top: 80px;
             margin-left: 65px;
             border: 1px solid black;
+            z-index:+2;
         }
 
         #circle5{
             background-color: darkgray;
-            height: 30px;
-            width: 30px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             margin-top: 80px;
             margin-left: 65px;
@@ -93,8 +94,8 @@
 
         #circle6{
             background-color: darkred;
-            height: 30px;
-            width: 30px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             margin-top: 80px;
             margin-left: 65px;
@@ -103,8 +104,8 @@
 
         #circle7{
             background-color: darkturquoise;
-            height: 30px;
-            width: 30px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             margin-top: 80px;
             margin-left: 65px;
@@ -113,8 +114,8 @@
 
         #circle8{
             background-color: darkseagreen;
-            height: 30px;
-            width: 30px;
+            height: 70px;
+            width: 70px;
             border-radius: 50%;
             margin-top: 80px;
             margin-left: 65px;
@@ -230,33 +231,18 @@
         <div class="circlesContainer">
             <h1>Deltagere - 12B</h1>
             <div class="wrap">
-                <div id="circle1">
-                    <p>Eirik</p>
-                </div>
-                <div id="circle2">
-                    <p>Linh</p>
-                </div>
-                <div id="circle3">
-                    <p>Laurits</p>
-                </div>
-                <div id="circle4">
-                    <p>Robin</p>
-                </div>
-                <div id="circle5">
-                    <p>Markus</p>
-                </div>
-                <div id="circle6">
-                    <p>Elise</p>
-                </div>
-                <div id="circle7">
-                    <p>Abdallah</p>
-                </div>
-                <div id="circle8">
-                    <p>Ottar</p>
-                </div>
+                <button id="circle1" onclick="eirikbutton()">Eirik</button>
+                <button id="circle2" onclick="linhbutton()">Linh</button>
+                <button id="circle3" onclick="lauritsbutton()">Laurits</button>
+                <button class="circle4" id="circle4" onclick="robinbtn()">Robin</button>
+                <button id="circle5" onclick="markusbutton()">Markus</button>
+                <button id="circle6" onclick="elisebutton">Elise</button>
+                <button id="circle7" onclick="abdallahbutton()">Abdallah</button>
+                <button id="circle8" onclick="ottarbutton()">Ottar</button>
             </div>
             <div class="data-container">
                 <div class="data-header">Resultat</div>
+                <p id="demo" style="z-index:+5;"></p>
                 <div id="debug"></div>
                 <canvas id="report"></canvas>
             </div>
@@ -266,8 +252,15 @@
         </div>
     </div>
     <script>
+
+    var robinbtn = document.getElementById("circle4");
+
+        function robinbtn(){
+            document.getElementById("demo").innerHTML = "Hello World";
+        }
+
         <!-- Her skrives kode i JavaScript som "gir liv" til bilde på skjermen. -->
-        fetch('https://bacit.info/hwr/20210926134925-47352fbdecddd9a754001f4e4abbf40f.json')
+        <!--fetch('https://bacit.info/hwr/20210926134925-47352fbdecddd9a754001f4e4abbf40f.json')
         .then(response => response.json())
         .then(data => console.log(data));
 
@@ -408,7 +401,9 @@
             context.lineWidth = 1;
             context.strokeStyle = "black";
             context.stroke();
-        });
+        });-->
+
+
     </script>
 </body>
 </html>

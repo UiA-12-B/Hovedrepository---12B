@@ -1,0 +1,23 @@
+<html>
+<head>
+
+</head>
+<body>
+    <button onclick="dothing()">Click</button>
+    <canvas id="report"></canvas>
+    <script>
+        var canvas = document.getElementById('report');
+        var context = canvas.getContext('2d');
+
+
+
+        function dothing(){
+            context.beginPath();
+            context.moveTo(220,40);
+            context.lineTo(480,40);
+            context.stroke();
+        }
+    </script>
+</body>
+
+</html>
