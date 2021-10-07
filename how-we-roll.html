@@ -78,7 +78,7 @@
     /*Question box for HWR*/
     .questionbox{
         width:80%;
-        height:820px;
+        height:770px;
         border-radius:50px;
         background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
         display:flex;
@@ -169,6 +169,7 @@
             <p>Spørsmål</p>
         </div>
         <form>
+            <!--Here is list of name-->
             <p class="selectbox">
                 <select class="nameselector" id="store-name" name="name-option">
                     <option value="" style="text-align:center; font-weight:bold">-Velg et navn-</option>
@@ -182,6 +183,7 @@
                     <option value="Ottar Worren" id="ottar">Ottar Nordal Worren</option>
                 </select>
             </p>
+            <!--Here is question list-->
             <div class="question">
                 <p>Hvor godt trives du i gruppen?</p>
             </div>
@@ -230,7 +232,9 @@
             <p>
                 <input class="slider" type="range" id="q8" name="q8" value="50">
             </p>
+            <!--Here is Submitbutton after answering all the questions-->
             <button class="button" id="submitbtn" disabled="disabled" type="submit">Submit</button>
+            <!--Here is Reportbutton in order to see the report-->
             <button class="button" onclick="window.location.href='hwr-report.html'">Report</button>
         </form>
     </div>
@@ -240,15 +244,46 @@
     </div>
 </div>
 
-
-
-
 <script>
-    const selectbox = document.querySelector('#store-name');
 
+   // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
+   // Example POST method implementation using fetch:
+   async function postData(url = '', data = {}) {
+       // Default options are marked with *
+       const response = await fetch(url, {
+           method: 'POST', // *GET, POST, PUT, DELETE, etc.
+           mode: 'cors', // no-cors, *cors, same-origin
+           cache: 'no-cache', // *default, no-cache, reload, force-cache,only-if-cached
+           credentials: 'same-origin', // include, *same-origin, omit
+           headers: {
+               'Content-Type': 'application/json',
+                // 'Content-Type': 'application/x-www-form-urlencoded',
+           },
+           redirect: 'follow', // manual, *follow, error
+           referrerPolicy: 'no-referrer', // no-referrer,*no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+           body: JSON.stringify(data) // body data type must match"Content-Type"header
+       });
+       return response.json(); // parses JSON response into native JavaScriptobjects
+   }
+
+   function handleSubmit(event) {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        const formJSON = Object.fromEntries(data.entries());
+        const results = document.querySelector('.results pre');
+        postData('https://bacit.info/', formJSON)
+        .then(data => {
+           results.innerText = JSON.stringify(data, null, 2);
+        });
+   }
+   const form = document.querySelector('form');
+   form.addEventListener('submit', handleSubmit);
+
+        //Disable Submitbutton when we do not select any name so that data will not be generated
+
+    const selectbox = document.querySelector('#store-name');
     selectbox.onchange = function(){
         var submitbtn = document.getElementById('submitbtn');
-
         if(selectbox.value==""){
            submitbtn.disabled = true
         } else {
@@ -256,28 +291,6 @@
         }
     }
 
-    async function postData(url = '', data = {}) {
-        const response = await fetch(url, {
-            method: 'POST', mode: 'cors', cache: 'no-cache', credentials: 'same-origin', headers: {
-                'Content-Type': 'application/json',
-            },
-            redirect: 'follow', referrerPolicy: 'no-referrer', body: JSON.stringify(data)
-        });
-        return response.json();
-    }
-
-    function handleSubmit(event) {
-        event.preventDefault();
-        const data = new FormData(event.target);
-        const formJSON = Object.fromEntries(data.entries());
-        const results = document.querySelector('.results pre');
-        postData('https://bacit.info/', formJSON)
-        .then(data => {
-            results.innerText = JSON.stringify(data, null, 2);
-        });
-   }
-   const form = document.querySelector('form');
-   form.addEventListener('submit', handleSubmit);
   </script>
 </body>
 </html>
