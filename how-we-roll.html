@@ -78,7 +78,7 @@
     /*Question box for HWR*/
     .questionbox{
         width:80%;
-        height:820px;
+        height:770px;
         border-radius:50px;
         background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
         display:flex;
@@ -169,6 +169,7 @@
             <p>Spørsmål</p>
         </div>
         <form>
+            <!--Here is list of name-->
             <p class="selectbox">
                 <select class="nameselector" id="store-name" name="name-option">
                     <option value="" id="name" style="text-align:center; font-weight:bold">-Velg et navn-</option>
@@ -182,6 +183,7 @@
                     <option value="Ottar Worren" id="ottar">Ottar Nordal Worren</option>
                 </select>
             </p>
+            <!--Here is question list-->
             <div class="question">
                 <p>Hvor godt trives du i gruppen?</p>
             </div>
@@ -230,7 +232,9 @@
             <p>
                 <input class="slider" type="range" id="q8" name="q8" value="50">
             </p>
+            <!--Here is Submitbutton after answering all the questions-->
             <button class="button" id="submitbtn" disabled="disabled" type="submit">Submit</button>
+            <!--Here is Reportbutton in order to see the report-->
             <button class="button" onclick="window.location.href='hwr-report.html'">Report</button>
         </form>
     </div>
@@ -239,9 +243,6 @@
         <pre></pre>
     </div>
 </div>
-
-
-
 
 <script>
    // From https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch (seen 2021-09-27)
@@ -266,7 +267,6 @@
 
    function handleSubmit(event) {
         event.preventDefault();
-
         const data = new FormData(event.target);
         const formJSON = Object.fromEntries(data.entries());
         const results = document.querySelector('.results pre');
@@ -278,11 +278,10 @@
    const form = document.querySelector('form');
    form.addEventListener('submit', handleSubmit);
 
+        //Disable Submitbutton when we do not select any name so that data will not be generated
     const selectbox = document.querySelector('#store-name');
-
     selectbox.onchange = function(){
         var submitbtn = document.getElementById('submitbtn');
-
         if(selectbox.value==""){
            submitbtn.disabled = true
         } else {
