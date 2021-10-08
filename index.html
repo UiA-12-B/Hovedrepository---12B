@@ -404,6 +404,23 @@ a button {
     top: 3.4rem;
 }
 
+        .markus-modal-content {
+            position: relative;
+            left: 0;
+            top: 10vh;
+            margin: auto;
+            padding: 20px;
+            width: 60%;
+            text-align: center;
+            min-height: 40vh;
+            width: 25rem;
+            border-radius: 30px;
+            padding: 0 5rem;
+            box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
+            background: rgb(56, 56, 56);
+            color: white;
+        }
+
 .lukk {
     cursor: pointer;
     user-select: none;
@@ -591,9 +608,8 @@ a button {
             <div class="card">
                 <!--Dette er en must for at funkjsonene skal funke under her kan man gjøre hav man vil-->
                 <div class="bilde">
+                    <img class="img-elise" src="/Bilder/MarkusIcon.PNG">
                     <div class="circle">
-                        <!--Det som står i bilde-->
-                        <h1 style="color: white">MF</h1>
                     </div>
                 </div>
                 <div class="info">
@@ -613,11 +629,16 @@ a button {
     <div id="myModal5" class="modal">
 
         <!-- Modal content -->
-        <div class="modal-content">
+        <div class="markus-modal-content">
             <span class="lukk"></span>
             <!--Skriv litt om deg selv-->
-            <h1>Markus Fjelltun</h1>
+            <h1 class="markush1">Markus Fjelltun</h1>
+            <p>Født 22.05.1993</p>
+            <p>Student ved Universitetet i Agder ved IT og Informasjonssystemer</p>
             <p>Info</p>
+            <p>Har en Bachelor i Spill og Opplevelsesteknologi ved Nord Universitet,
+                og har jobbet tidligere som servitør for Lian Restaurant, og sjåfør for DHL Express.
+            </p>
         </div>
 
     </div>
