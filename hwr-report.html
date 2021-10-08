@@ -13,7 +13,7 @@
         }
 
         .container{
-            min-height:100vh;
+            height:120vh;
             background:linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
             align-items:center;
             display:flex;
@@ -121,17 +121,20 @@
     </div>
 </div>
 <script>
+    // Definerer canvas elementet
     var canvas = document.getElementById('report');
     var context = canvas.getContext('2d');
     canvas.width = 700;
     canvas.height = 500;
 
-
+    //Henter data og tegner på canvas når abdallah sin knapp trykkes på
     function abdallahbutton(){
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        context.clearRect(0, 0, canvas.width, canvas.height); //Hvisker bort alle streker på canvas elementet
+        // Henter data fra database, eksempelfil brukt i alle 8 medlemers tilfeller
+        fetch("https://bacit.info/hwr/20211008133457-3f029d5e751e42afe97c054a1b3275fb.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
+                // Tegn og plasser all skrift på canvas elementet (tekst, X-koordinat, Y-koordinat)
                 context.font = '20px serif';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
@@ -156,7 +159,7 @@
                 context.fillText('Nei', 120, 455);
                 context.fillText('Ja', 550, 455);
 
-
+                //Tegn 8 streker på canvas elementet
                 context.beginPath();
                 context.moveTo(170,40);
                 context.lineTo(530,40);
@@ -174,7 +177,8 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                //Tegn en sirkel og plasser på en av tidligere tegnet streker
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -185,7 +189,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -196,7 +200,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -207,7 +211,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -218,7 +222,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -229,7 +233,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -240,7 +244,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -253,9 +257,10 @@
             });
     }
 
+    //Henter data og tegner på canvas når eirik sin knapp trykkes på
     function eirikbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008132715-fcf8b0e29ad09d14744411d44e5e44c1.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
                 context.font = '20px serif';
@@ -299,7 +304,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -310,7 +315,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -321,7 +326,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -332,7 +337,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -343,7 +348,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -354,7 +359,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -365,7 +370,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -378,9 +383,10 @@
             });
     }
 
+    //Henter data og tegner på canvas når elise sin knapp trykkes på
     function elisebutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008132105-c1caf65b0a07f2c534dd3ea40d80c7d5.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
                 context.font = '20px serif';
@@ -424,7 +430,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -435,7 +441,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -446,7 +452,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -457,7 +463,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -468,7 +474,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -479,7 +485,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -490,7 +496,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -503,9 +509,10 @@
             });
     }
 
+    //Henter data og tegner på canvas når laurits sin knapp trykkes på
     function lauritsbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008125803-1bd57bd05ecf801ee9b85134a32fb891.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
                 context.font = '20px serif';
@@ -549,7 +556,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -560,7 +567,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -571,7 +578,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -582,7 +589,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -593,7 +600,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -604,7 +611,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -615,7 +622,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -628,9 +635,10 @@
             });
     }
 
+    //Henter data og tegner på canvas når linh sin knapp trykkes på
     function linhbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008134046-a38748e937a29121a59a62c78893e525.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
                 context.font = '20px serif';
@@ -674,7 +682,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -685,7 +693,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -696,7 +704,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -707,7 +715,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -718,7 +726,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -729,7 +737,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -740,7 +748,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -753,9 +761,10 @@
             });
     }
 
+    //Henter data og tegner på canvas når markus sin knapp trykkes på
     function markusbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008125657-11ae84ec74d5f3a0ddcdff71aee27aba.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
                 context.font = '20px serif';
@@ -799,7 +808,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -810,7 +819,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -821,7 +830,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -832,7 +841,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -843,7 +852,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -854,7 +863,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -865,7 +874,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -878,6 +887,7 @@
             });
     }
 
+    //Henter data og tegner på canvas når robin sin knapp trykkes på
     function robinbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
         fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
@@ -924,7 +934,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -935,7 +945,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -946,7 +956,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -957,7 +967,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -968,7 +978,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -979,7 +989,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -990,7 +1000,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -1003,9 +1013,10 @@
             });
     }
 
+    //Henter data og tegner på canvas når ottar sin knapp trykkes på
     function ottarbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008135612-fdc66f90186d4a7be1190ba5a5193596.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
                 context.font = '20px serif';
@@ -1049,7 +1060,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -1060,7 +1071,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -1071,7 +1082,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -1082,7 +1093,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -1093,7 +1104,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -1104,7 +1115,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -1115,7 +1126,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
