@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HWR § Report</title>
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         *{
             margin: 0;
             padding:0;
-            font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+            font-family:'Handlee', cursive;
         }
 
         .container{
@@ -40,22 +43,44 @@
         #homebutton:hover{
             border: 2px solid #DCB0FF;
         }
+        /*Tooltip will show the index.html when we hover the cursor over the home icon*/
+        [data-tooltip]::after{
+            position: absolute;
+            width: 70px;
+            left: 75px;
+            top: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 2px;
+            border-radius: 3px;
+            content: attr(data-tooltip);
+            color: #ffffff;
+            background: #4C4452;
+            font-size: 12px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        [data-tooltip]:hover::after{
+            opacity: 1;
+            visibility: visible;
+        }
 
         .buttoncontainer {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            background-color: #2C394C;
+            background-image: linear-gradient(to right bottom, #641398, #5d189c, #561ca0, #4d20a4, #4324a8);
             height: 175px;
             width: 1100px;
-            border-radius: 10px;
+            border-radius: 20px;
             position: absolute;
         }
 
         h1{
             font-size: 3rem;
             text-align: center;
-            background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
+            background: #FEF6FF;
             text-transform: uppercase;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -74,7 +99,12 @@
             margin-top: 80px;
             margin-left: 30px;
             margin-right: 30px;
-            border: 5px solid black;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .namebutton:focus,
+        .namebutton:hover{
+            border: 2px solid white;
         }
 
         .resultcontainer {
@@ -91,7 +121,7 @@
 
         .resultheader{
             font-size:50px;
-            color: white;
+            color: #FEF6FF;
             text-transform: uppercase;
             font-weight: bold;
             padding: 20px;
@@ -104,15 +134,14 @@
     <div class="buttoncontainer">
         <h1>Deltagere - 12B</h1>
         <div class="wrap">
-            <button class="namebutton" style="background-color:#8FC3CF;" onclick="abdallahbutton()">Abdallah</button>
-            <button class="namebutton" style="background-color:#FFC1B3;" onclick="eirikbutton()">Eirik</button>
-            <button class="namebutton" style="background-color:#FFA5F8;" onclick="elisebutton()">Elise</button>
-            <button class="namebutton" style="background-color:#2DC193;" onclick="lauritsbutton()">Laurits</button>
-            <button class="namebutton" style="background-color:#E5D360;" onclick="linhbutton()">Linh</button>
-            <button class="namebutton" style="background-color:#32ADFF;" onclick="markusbutton()">Markus</button>
-            <button class="namebutton" style="background-color:#BAFFFB;" onclick="robinbutton()">Robin</button>
-            <button class="namebutton" style="background-color:#7FF871;" onclick="ottarbutton()">Ottar</button>
-
+            <button class="namebutton" style="background-color:#8FC3CF; font-size: 16px; font-weight: bold" onclick="abdallahbutton()">Abdallah</button>
+            <button class="namebutton" style="background-color:#FFC1B3; font-size: 16px; font-weight: bold" onclick="eirikbutton()">Eirik</button>
+            <button class="namebutton" style="background-color:#FFA5F8; font-size: 16px; font-weight: bold" onclick="elisebutton()">Elise</button>
+            <button class="namebutton" style="background-color:#2DC193; font-size: 16px; font-weight: bold" onclick="lauritsbutton()">Laurits</button>
+            <button class="namebutton" style="background-color:#E5D360; font-size: 16px; font-weight: bold" onclick="linhbutton()">Linh</button>
+            <button class="namebutton" style="background-color:#32ADFF; font-size: 16px; font-weight: bold" onclick="markusbutton()">Markus</button>
+            <button class="namebutton" style="background-color:#BAFFFB; font-size: 16px; font-weight: bold" onclick="robinbutton()">Robin</button>
+            <button class="namebutton" style="background-color:#7FF871; font-size: 16px; font-weight: bold" onclick="ottarbutton()">Ottar</button>
         </div>
     </div>
     <div class="resultcontainer">
