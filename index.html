@@ -5,9 +5,12 @@
     <title>Hovedside</title>
     <title>HWR § Index</title>
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         html, body, .holster {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: 'Handlee', cursive;
     min-height: 100vh;
     background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
 }
@@ -74,11 +77,7 @@
     border-radius: 30px;
     padding: 0 5rem;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
-    background: linear-gradient(
-            to top,
-            rgba(245,70,66,0.75),
-            rgb(0, 127, 255)
-    );
+    background-image: linear-gradient(to bottom, #9c6bff, #8e68f9, #7f65f2, #7061eb, #615ee4);
 }
 .bilde {
     padding-top: 20px;
@@ -104,7 +103,6 @@
     font-size: 3rem;
     text-align: center;
     transition: all 0.75s ease-out;
-
     color: white;
 }
 .info h2{
@@ -214,6 +212,8 @@
 }
 
 a button {
+    margin: 10px;
+    margin-top: -10px;
     padding: 1rem 2rem;
     background: #27177E;
     border: none;
@@ -223,8 +223,10 @@ a button {
     margin-bottom: 40px;
     text-align: center;
     font-weight: bolder;
+    font-family: 'Handlee', cursive;
+    font-size: 16px;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2);
-    margin: 10px;
+
 }
 .hrwbutton:focus,
     .hwrbutton:hover{
@@ -360,16 +362,18 @@ a button {
     border-radius: 30px;
     padding: 0 5rem;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2), 0 0 50px rgba(0,0,0,0.2);
-    box-shadow: 0px 0px 20px 10px #70BDFF;
     background: rgb(56, 56, 56);
     color: white;
 }
 .Linh-info{
     padding-top: 5px;
+
 }
 .list-info-Linh li{
     list-style-type: none;
     padding: 5px;
+    margin-top: -7px;
+    font-size: 16px;
 }
 .img-Linh{
     vertival-align: middle;
@@ -407,7 +411,7 @@ a button {
 }
 .modal-button {
     padding: 1rem 2rem;
-    background: rgba(68, 96, 155, 0.664);
+    background: #4D18A4;
     border: none;
     color: white;
     cursor: pointer;
@@ -415,7 +419,13 @@ a button {
     margin-bottom: 40px;
     text-align: center;
     font-weight: bolder;
+    font-family: 'Handlee', cursive;
+    font-size: 16px;
     box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+}
+.modal-button:focus,
+.modal-button:hover{
+    border: 2px solid #D4E9F3;
 }
 
     </style>
@@ -530,12 +540,12 @@ a button {
         <!-- Modal content -->
         <div class="modal-content">
             <span class="lukk"></span>
-            <!--Skriv litt om deg selv-->
+        <!--Laurits-info-->
             <h1>Laurits Jonas Lund</h1>
-            <p>22.05.1997</p>
-            <p>Larvik</p>
-            <p>Universitetet i Agder</p>
-            <p>IT og informasjonssystemer</p>
+            <p style="margin-top: -5px; font-size: 16px;">22.05.1997</p>
+            <p style="margin-top: -5px; font-size: 16px;">Larvik</p>
+            <p style="margin-top: -5px; font-size: 16px;">Universitetet i Agder</p>
+            <p style="margin-top: -5px; font-size: 16px;">IT og informasjonssystemer</p>
         </div>
 
     </div>
@@ -659,7 +669,6 @@ a button {
                 <div class="bilde">
                     <img class="img-Abdallah" src="/Bilder/Bilde Abdallah 01.jpg">
                     <div class="circle">
-
                         <!--Det som står i bilde-->
                         <h1 style="color: white">AB</h1>
                     </div>
@@ -687,9 +696,9 @@ a button {
 
             <div class="Abdallah-info">
                 <h1> >Abdallah Gholam Bakir<</h1>
-                <p>* 19 år</p>
-                <p>* Kristiansand, Norge</p>
-                <p>* Studerer IT og informasjonssytemer på Uia</p>
+                <p style="margin-top: -7px; font-size: 18px;">* 19 år</p>
+                <p style="margin-top: -7px; font-size: 18px;">* Kristiansand, Norge</p>
+                <p style="margin-top: -7px; font-size: 18px;">* Studerer IT og informasjonssytemer på Uia</p>
             </div>
         </div>
 
