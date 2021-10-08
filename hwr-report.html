@@ -443,8 +443,6 @@
         fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-
                 context.font = '20px serif';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
@@ -570,8 +568,6 @@
         fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                document.querySelector("#debug").innerText = data.data01 + " " + data.data02;
                 context.font = '20px serif';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
@@ -947,11 +943,6 @@
         fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                document.querySelector("#debug").innerText = data.data01 + " " + data.data02;
-
-                var
-
                 context.font = '20px serif';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
@@ -1202,11 +1193,6 @@
         fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                console.log(data);
-                document.querySelector("#debug").innerText = data.data01 + " " + data.data02;
-
-                var canvas = document.getElementById('report');
-                
                 context.font = '20px serif';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
