@@ -13,12 +13,12 @@
         }
 
         .container{
-            min-height: 130vh;
-            background: linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            padding: 5rem;
+            min-height:100vh;
+            background:linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
+            align-items:center;
+            display:flex;
+            flex-direction:column;
+            padding:2rem;
         }
 
         /*home button*/
@@ -40,158 +40,27 @@
         #homebutton:hover{
             border: 2px solid #DCB0FF;
         }
-        /*home button*/
-        #homebutton{
-            display: inline-block;
-            position: absolute;
-            left: 16px;
-            top: 20px;
-            padding: 13px;
-            border-radius:50%;
-            text-align: center;
-            background: #6D21AE;
-            font-size: 25px;
-            color: #E6E6E6;
-        }
 
-        /*Tooltip will show the index.html when we hover the cursor over the home icon*/
-        [data-tooltip]::after{
-            position: absolute;
-            width: 70px;
-            left: 75px;
-            top: 40px;
-            text-align: center;
-            box-sizing: border-box;
-            padding: 2px;
-            border-radius: 3px;
-            content: attr(data-tooltip);
-            color: #ffffff;
-            background: #4C4452;
-            font-size: 12px;
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-
-        [data-tooltip]:hover::after{
-            opacity: 1;
-            visibility: visible;
-        }
-
-        #homebutton:focus,
-        #homebutton:hover{
-            border: 2px solid #978ABE;
-        }
-
-        .circlesContainer{
+        .buttoncontainer {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            margin-top: -40px;
-            background-image: linear-gradient(to left top, #492eb5, #4e2fb6, #5331b8, #5832b9, #5c34ba);
+            background-color: #2C394C;
             height: 175px;
             width: 1100px;
-            border-radius: 20px;
+            border-radius: 10px;
             position: absolute;
         }
 
         h1{
-            margin-top: 8px;
-            font-size: 45px;
+            font-size: 3rem;
             text-align: center;
-            background: #FEF6FF;
+            background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
             text-transform: uppercase;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             margin-top:10px;
         }
-
-        #circle1{
-            background-color: #8FC3CF;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 0vh;
-            border: 2px solid black;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        #circle2{
-            background-color: #FFC1B3;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 2px solid black;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        #circle3{
-            background-color: #FFA5F8;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 2px solid black;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        .circle4{
-            background-color: #2DC193;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 2px solid black;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        #circle5{
-            background-color: #E5D360;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 2px solid black;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        #circle6{
-            background-color: #32ADFF;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 2px solid black;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        #circle7{
-            background-color: #BAFFFB;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 2px solid black;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        #circle8{
-            background-color: #7FF871;
 
         .wrap{
             display: inline-flex;
@@ -203,31 +72,6 @@
             width: 70px;
             border-radius: 50%;
             margin-top: 80px;
-            margin-left: 65px;
-            border: 2px solid black;
-            font-size: 15px;
-            font-weight: bold;
-        }
-
-        .wrap{
-            display: inline-flex;
-            position: absolute;
-        }
-
-        .center{
-            display: flex;
-            justify-item: center;
-            margin-top: 750px;
-            position: absolute;
-        }
-
-        p{
-            padding-top: 50px;
-        }
-
-        .data-container{
-            width: 80%;
-            height: 770px;
             margin-left: 30px;
             margin-right: 30px;
             border: 5px solid black;
@@ -237,18 +81,13 @@
             width:800px;
             height:650px;
             border-radius:50px;
-            background-image: linear-gradient(to top, #492eb5, #4e2fb6, #5331b8, #5832b9, #5c34ba);
+            background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
             display:flex;
             flex-direction:column;
             align-items:center;
             position: absolute;
             margin-top: 200px;
         }
-
-
-        .data-header{
-            font-size:40px;
-            color: #FEF6FF;
 
         .resultheader{
             font-size:50px;
@@ -257,30 +96,6 @@
             font-weight: bold;
             padding: 20px;
         }
-
-        a button{
-            padding: 1rem 2rem;
-            background: #27177E;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 30px;
-            border: 2px solid #492986;
-            text-align: center;
-            font-weight: bolder;
-            box-shadow: 0 20px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s ease-in;
-            margin-top: 100px;
-        }
-        .hrwbutton:focus,
-        .hwrbutton:hover{
-            outline:none;
-            border: 2px solid #95AEDC;
-        }
-        .Github{
-            margin-bottom: 80px;
-        }
-
     </style>
 </head>
 <body>
