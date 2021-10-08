@@ -14,6 +14,7 @@
 
         .container{
             min-height:100vh;
+            height:130vh;
             background:linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
             align-items:center;
             display:flex;
@@ -96,11 +97,34 @@
             font-weight: bold;
             padding: 20px;
         }
+        .hwrbutton{
+            margin: 5px;
+            margin-top: 20px;
+            padding: 1rem 2rem;
+            background: #27177E;
+            border-radius: 30px;
+            box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+            border: 2px solid #492986;
+            color: white;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease-in;
+        }
+        /*Light effect for Submit and Report button when we hover the cursor over these buttons*/
+        .hwrbutton:focus,
+        .hwrbutton:hover{
+            outline:none;
+            border: 2px solid #95AEDC;
+        }
+
     </style>
 </head>
 <body>
 <div class="container">
     <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="homebutton"></i></a>
+
     <div class="buttoncontainer">
         <h1>Deltagere - 12B</h1>
         <div class="wrap">
@@ -118,7 +142,11 @@
     <div class="resultcontainer">
         <div class="resultheader">Resultat</div>
         <canvas id="report"></canvas>
+        <button class="hwrbutton" onclick="window.location.href='hwr-report.html'">How We Roll</button>
+        <!--Group's repository for How We Roll-->
+        <a href="https://github.com/UiA-12-B/Hovedrepository-12B"><i class="fab fa-github" style="font-size: 50px; color: black; margin-top: 15px;"></i></a>
     </div>
+
 </div>
 <script>
     var canvas = document.getElementById('report');
@@ -174,7 +202,12 @@
                 context.lineTo(530,450);
                 context.stroke();
 
+<<<<<<< HEAD
                 var X = 220 + parseInt(data.q1, 26);
+=======
+                //Tegn en sirkel og plasser på en av tidligere tegnet streker basert på data fra json fil
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
+>>>>>>> 7502a349a21b0d0b670dde1e2626114c9c178bfe
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
