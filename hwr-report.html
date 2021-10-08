@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HWR § Report</title>
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         *{
             margin: 0;
             padding:0;
-            font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+            font-family:'Handlee', cursive;
         }
 
         .container{
-            min-height:100vh;
             height:130vh;
             background:linear-gradient(135deg, hsl(280, 75%, 45%) 0%, hsl(216, 75%, 45%) 100%);
             align-items:center;
@@ -41,22 +43,44 @@
         #homebutton:hover{
             border: 2px solid #DCB0FF;
         }
+        /*Tooltip will show the index.html when we hover the cursor over the home icon*/
+        [data-tooltip]::after{
+            position: absolute;
+            width: 70px;
+            left: 75px;
+            top: 40px;
+            text-align: center;
+            box-sizing: border-box;
+            padding: 2px;
+            border-radius: 3px;
+            content: attr(data-tooltip);
+            color: #ffffff;
+            background: #4C4452;
+            font-size: 12px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        [data-tooltip]:hover::after{
+            opacity: 1;
+            visibility: visible;
+        }
 
         .buttoncontainer {
             display: flex;
             align-items: flex-start;
             justify-content: center;
-            background-color: #2C394C;
+            background-image: linear-gradient(to right bottom, #641398, #5d189c, #561ca0, #4d20a4, #4324a8);
             height: 175px;
             width: 1100px;
-            border-radius: 10px;
+            border-radius: 20px;
             position: absolute;
         }
 
         h1{
             font-size: 3rem;
             text-align: center;
-            background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
+            background: #FEF6FF;
             text-transform: uppercase;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -75,7 +99,12 @@
             margin-top: 80px;
             margin-left: 30px;
             margin-right: 30px;
-            border: 5px solid black;
+            border: 2px solid black;
+            cursor: pointer;
+        }
+        .namebutton:focus,
+        .namebutton:hover{
+            border: 2px solid white;
         }
 
         .resultcontainer {
@@ -92,7 +121,7 @@
 
         .resultheader{
             font-size:50px;
-            color: white;
+            color: #FEF6FF;
             text-transform: uppercase;
             font-weight: bold;
             padding: 20px;
@@ -124,18 +153,18 @@
 <body>
 <div class="container">
     <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="homebutton"></i></a>
+
     <div class="buttoncontainer">
         <h1>Deltagere - 12B</h1>
         <div class="wrap">
-            <button class="namebutton" style="background-color:#8FC3CF;" onclick="abdallahbutton()">Abdallah</button>
-            <button class="namebutton" style="background-color:#FFC1B3;" onclick="eirikbutton()">Eirik</button>
-            <button class="namebutton" style="background-color:#FFA5F8;" onclick="elisebutton()">Elise</button>
-            <button class="namebutton" style="background-color:#2DC193;" onclick="lauritsbutton()">Laurits</button>
-            <button class="namebutton" style="background-color:#E5D360;" onclick="linhbutton()">Linh</button>
-            <button class="namebutton" style="background-color:#32ADFF;" onclick="markusbutton()">Markus</button>
-            <button class="namebutton" style="background-color:#BAFFFB;" onclick="robinbutton()">Robin</button>
-            <button class="namebutton" style="background-color:#7FF871;" onclick="ottarbutton()">Ottar</button>
-
+            <button class="namebutton" style="background-color:#8FC3CF; font-size: 16px; font-weight: bold" onclick="abdallahbutton()">Abdallah</button>
+            <button class="namebutton" style="background-color:#FFC1B3; font-size: 16px; font-weight: bold" onclick="eirikbutton()">Eirik</button>
+            <button class="namebutton" style="background-color:#FFA5F8; font-size: 16px; font-weight: bold" onclick="elisebutton()">Elise</button>
+            <button class="namebutton" style="background-color:#2DC193; font-size: 16px; font-weight: bold" onclick="lauritsbutton()">Laurits</button>
+            <button class="namebutton" style="background-color:#E5D360; font-size: 16px; font-weight: bold" onclick="linhbutton()">Linh</button>
+            <button class="namebutton" style="background-color:#32ADFF; font-size: 16px; font-weight: bold" onclick="markusbutton()">Markus</button>
+            <button class="namebutton" style="background-color:#BAFFFB; font-size: 16px; font-weight: bold" onclick="robinbutton()">Robin</button>
+            <button class="namebutton" style="background-color:#7FF871; font-size: 16px; font-weight: bold" onclick="ottarbutton()">Ottar</button>
         </div>
     </div>
     <div class="resultcontainer">
@@ -148,18 +177,21 @@
 
 </div>
 <script>
+    // Definerer canvas elementet
     var canvas = document.getElementById('report');
     var context = canvas.getContext('2d');
     canvas.width = 700;
     canvas.height = 500;
 
-
+    //Henter data og tegner på canvas når abdallah sin knapp trykkes på
     function abdallahbutton(){
-        context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        context.clearRect(0, 0, canvas.width, canvas.height); //Hvisker bort alle streker på canvas elementet
+        // Henter data fra database, eksempelfil brukt i alle 8 medlemers tilfeller
+        fetch("https://bacit.info/hwr/20211008133457-3f029d5e751e42afe97c054a1b3275fb.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                context.font = '20px serif';
+                // Tegn og plasser all skrift på canvas elementet (tekst, X-koordinat, Y-koordinat)
+                context.font = '20px Handlee';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
                 context.fillText('Lite', 120, 45);
@@ -183,7 +215,7 @@
                 context.fillText('Nei', 120, 455);
                 context.fillText('Ja', 550, 455);
 
-
+                //Tegn 8 streker på canvas elementet
                 context.beginPath();
                 context.moveTo(170,40);
                 context.lineTo(530,40);
@@ -201,12 +233,8 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-<<<<<<< HEAD
-                var X = 220 + parseInt(data.q1, 26);
-=======
                 //Tegn en sirkel og plasser på en av tidligere tegnet streker basert på data fra json fil
                 var X = 170 + parseInt(data.q1, 10) * 3.6;
->>>>>>> 7502a349a21b0d0b670dde1e2626114c9c178bfe
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -217,7 +245,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -228,7 +256,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -239,7 +267,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -250,7 +278,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -261,7 +289,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -272,7 +300,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -285,12 +313,13 @@
             });
     }
 
+    //Henter data og tegner på canvas når eirik sin knapp trykkes på
     function eirikbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008132715-fcf8b0e29ad09d14744411d44e5e44c1.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                context.font = '20px serif';
+                context.font = '20px Handlee';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
                 context.fillText('Lite', 120, 45);
@@ -331,7 +360,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -342,7 +371,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -353,7 +382,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -364,7 +393,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -375,7 +404,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -386,7 +415,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -397,7 +426,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -410,12 +439,13 @@
             });
     }
 
+    //Henter data og tegner på canvas når elise sin knapp trykkes på
     function elisebutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008132105-c1caf65b0a07f2c534dd3ea40d80c7d5.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                context.font = '20px serif';
+                context.font = '20px Handlee';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
                 context.fillText('Lite', 120, 45);
@@ -456,7 +486,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -467,7 +497,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -478,7 +508,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -489,7 +519,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -500,7 +530,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -511,7 +541,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -522,7 +552,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -535,12 +565,13 @@
             });
     }
 
+    //Henter data og tegner på canvas når laurits sin knapp trykkes på
     function lauritsbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008125803-1bd57bd05ecf801ee9b85134a32fb891.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                context.font = '20px serif';
+                context.font = '20px Handlee';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
                 context.fillText('Lite', 120, 45);
@@ -581,7 +612,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -592,7 +623,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -603,7 +634,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -614,7 +645,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -625,7 +656,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -636,7 +667,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -647,7 +678,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -660,12 +691,13 @@
             });
     }
 
+    //Henter data og tegner på canvas når linh sin knapp trykkes på
     function linhbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008134046-a38748e937a29121a59a62c78893e525.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                context.font = '20px serif';
+                context.font = '20px Handlee';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
                 context.fillText('Lite', 120, 45);
@@ -706,7 +738,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -717,7 +749,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -728,7 +760,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -739,7 +771,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -750,7 +782,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -761,7 +793,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -772,7 +804,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -785,12 +817,13 @@
             });
     }
 
+    //Henter data og tegner på canvas når markus sin knapp trykkes på
     function markusbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008125657-11ae84ec74d5f3a0ddcdff71aee27aba.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                context.font = '20px serif';
+                context.font = '20px Handlee';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
                 context.fillText('Lite', 120, 45);
@@ -831,7 +864,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -842,7 +875,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -853,7 +886,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -864,7 +897,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -875,7 +908,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -886,7 +919,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -897,7 +930,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -910,12 +943,13 @@
             });
     }
 
+    //Henter data og tegner på canvas når robin sin knapp trykkes på
     function robinbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008142306-db3b0563404cecebc83a8ffc57b885c6.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                context.font = '20px serif';
+                context.font = '20px Handlee';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
                 context.fillText('Lite', 120, 45);
@@ -956,7 +990,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -967,7 +1001,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -978,7 +1012,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -989,7 +1023,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -1000,7 +1034,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -1011,7 +1045,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -1022,7 +1056,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
@@ -1035,12 +1069,13 @@
             });
     }
 
+    //Henter data og tegner på canvas når ottar sin knapp trykkes på
     function ottarbutton(){
         context.clearRect(0, 0, canvas.width, canvas.height);
-        fetch("https://bacit.info/hwr/20211006120552-337ebd89c61e27ddc614e31ff3527360.json", {cache: 'no-cache'})
+        fetch("https://bacit.info/hwr/20211008135612-fdc66f90186d4a7be1190ba5a5193596.json", {cache: 'no-cache'})
             .then(response => response.json())
             .then(data => {
-                context.font = '20px serif';
+                context.font = '20px Handlee';
                 context.fillStyle="black";
                 context.fillText('Hvor godt trives du i gruppen?', 230, 20);
                 context.fillText('Lite', 120, 45);
@@ -1081,7 +1116,7 @@
                 context.lineTo(530,450);
                 context.stroke();
 
-                var X = 220 + parseInt(data.q1, 26);
+                var X = 170 + parseInt(data.q1, 10) * 3.6;
                 var Y = 40;
                 var R = 5;
                 context.beginPath();
@@ -1092,7 +1127,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q2, 26);
+                var X = 170 + parseInt(data.q2, 10) * 3.6;
                 var Y = 100;
                 var R = 5;
                 context.beginPath();
@@ -1103,7 +1138,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q3, 26);
+                var X = 170 + parseInt(data.q3, 10) * 3.6;
                 var Y = 170;
                 var R = 5;
                 context.beginPath();
@@ -1114,7 +1149,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q4, 26);
+                var X = 170 + parseInt(data.q4, 10) * 3.6;
                 var Y = 240;
                 var R = 5;
                 context.beginPath();
@@ -1125,7 +1160,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q5, 26);
+                var X = 170 + parseInt(data.q5, 10) * 3.6;
                 var Y = 310;
                 var R = 5;
                 context.beginPath();
@@ -1136,7 +1171,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q6, 26);
+                var X = 170 + parseInt(data.q6, 10) * 3.6;
                 var Y = 380;
                 var R = 5;
                 context.beginPath();
@@ -1147,7 +1182,7 @@
                 context.strokeStyle = "black";
                 context.stroke();
 
-                var X = 220 + parseInt(data.q7, 26);
+                var X = 170 + parseInt(data.q7, 10) * 3.6;
                 var Y = 450;
                 var R = 5;
                 context.beginPath();
