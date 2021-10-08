@@ -20,166 +20,6 @@
             justify-content: center;
             padding: 5rem;
         }
-
-        .circlesContainer{
-            display: flex;
-            align-items: flex-start;
-            justify-content: center;
-            background-color: #2C394C;
-            height: 175px;
-            width: 1100px;
-            border-radius: 10px;
-            position: absolute;
-        }
-
-        h1{
-            font-size: 3rem;
-            text-align: center;
-            background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
-            text-transform: uppercase;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        #circle1{
-            background-color: darkslateblue;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 0vh;
-            border: 1px solid black;
-        }
-
-        #circle2{
-            background-color: darksalmon;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 1px solid black;
-        }
-
-        #circle3{
-            background-color: darkcyan;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 1px solid black;
-        }
-
-        .circle4{
-            background-color: darkviolet;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 1px solid black;
-            z-index:+2;
-        }
-
-        #circle5{
-            background-color: darkgray;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 1px solid black;
-        }
-
-        #circle6{
-            background-color: darkred;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 1px solid black;
-        }
-
-        #circle7{
-            background-color: darkturquoise;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 1px solid black;
-        }
-
-        #circle8{
-            background-color: darkseagreen;
-            height: 70px;
-            width: 70px;
-            border-radius: 50%;
-            margin-top: 80px;
-            margin-left: 65px;
-            border: 1px solid black;
-        }
-
-        .wrap{
-            display: inline-flex;
-            position: absolute;
-        }
-
-        .center{
-            display: flex;
-            justify-item: center;
-            margin-top: 750px;
-            position: absolute;
-        }
-
-        a button{
-            padding: 1rem 2rem;
-            background: darkslateblue;
-            border: none;
-            color: white;
-            cursor: pointer;
-            border-radius: 30px;
-            border: 2px solid #492986;
-            text-align: center;
-            font-weight: bolder;
-            box-shadow: 0 20px 20px rgba(0,0,0,0.2);
-            transition: all 0.3s ease-in;
-            margin: 10px;
-            margin-top: 150px;
-        }
-
-        .hrwbutton:focus,
-        .hwrbutton:hover{
-            outline:none;
-            border: 2px solid #DEB2FF;
-        }
-
-        p{
-            padding-top: 50px;
-        }
-
-        .data-container{
-            width: 120%;
-            height:800px;
-            border-radius:50px;
-            background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
-            display:flex;
-            flex-direction:column;
-            align-items:center;
-            position: absolute;
-            margin-top: 200px;
-        }
-
-        .data-header{
-            font-size:50px;
-            color: white;
-            text-transform: uppercase;
-            font-weight: bold;
-            padding: 20px;
-        }
-
         /*home button*/
         #homebutton{
             display: inline-block;
@@ -190,12 +30,11 @@
             border-radius:50%;
             text-align: center;
             background: #6D21AE;
-            box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
             font-size: 25px;
             color: #E6E6E6;
         }
 
-        /*Tooltip will show the index.html when we move the mouse to the home icon*/
+        /*Tooltip will show the index.html when we hover the cursor over the home icon*/
         [data-tooltip]::after{
             position: absolute;
             width: 70px;
@@ -221,8 +60,185 @@
 
         #homebutton:focus,
         #homebutton:hover{
-            border: 2px solid #DCB0FF;
+            border: 2px solid #978ABE;
         }
+
+        .circlesContainer{
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            margin-top: -40px;
+            background-image: linear-gradient(to left top, #492eb5, #4e2fb6, #5331b8, #5832b9, #5c34ba);
+            height: 175px;
+            width: 1100px;
+            border-radius: 20px;
+            position: absolute;
+        }
+
+        h1{
+            margin-top: 8px;
+            font-size: 45px;
+            text-align: center;
+            background: #FEF6FF;
+            text-transform: uppercase;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #circle1{
+            background-color: #8FC3CF;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-top: 80px;
+            margin-left: 0vh;
+            border: 2px solid black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #circle2{
+            background-color: #FFC1B3;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-top: 80px;
+            margin-left: 65px;
+            border: 2px solid black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #circle3{
+            background-color: #FFA5F8;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-top: 80px;
+            margin-left: 65px;
+            border: 2px solid black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .circle4{
+            background-color: #2DC193;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-top: 80px;
+            margin-left: 65px;
+            border: 2px solid black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #circle5{
+            background-color: #E5D360;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-top: 80px;
+            margin-left: 65px;
+            border: 2px solid black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #circle6{
+            background-color: #32ADFF;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-top: 80px;
+            margin-left: 65px;
+            border: 2px solid black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #circle7{
+            background-color: #BAFFFB;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-top: 80px;
+            margin-left: 65px;
+            border: 2px solid black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        #circle8{
+            background-color: #7FF871;
+            height: 70px;
+            width: 70px;
+            border-radius: 50%;
+            margin-top: 80px;
+            margin-left: 65px;
+            border: 2px solid black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+
+        .wrap{
+            display: inline-flex;
+            position: absolute;
+        }
+
+        .center{
+            display: flex;
+            justify-item: center;
+            margin-top: 750px;
+            position: absolute;
+        }
+
+        p{
+            padding-top: 50px;
+        }
+
+        .data-container{
+            width: 80%;
+            height: 770px;
+            border-radius:50px;
+            background-image: linear-gradient(to top, #492eb5, #4e2fb6, #5331b8, #5832b9, #5c34ba);
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            position: absolute;
+            margin-top: 200px;
+        }
+
+        .data-header{
+            font-size:40px;
+            color: #FEF6FF;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 20px;
+        }
+        a button{
+            padding: 1rem 2rem;
+            background: #27177E;
+            border: none;
+            color: white;
+            cursor: pointer;
+            border-radius: 30px;
+            border: 2px solid #492986;
+            text-align: center;
+            font-weight: bolder;
+            box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+            transition: all 0.3s ease-in;
+            margin-top: 100px;
+        }
+        .hrwbutton:focus,
+        .hwrbutton:hover{
+            outline:none;
+            border: 2px solid #95AEDC;
+        }
+        .Github{
+            margin-bottom: 80px;
+        }
+
     </style>
 </head>
 <body>
@@ -231,13 +247,13 @@
         <div class="circlesContainer">
             <h1>Deltagere - 12B</h1>
             <div class="wrap">
-                <button id="circle1" onclick="eirikbutton()">Eirik</button>
-                <button id="circle2" onclick="linhbutton()">Linh</button>
-                <button id="circle3" onclick="lauritsbutton()">Laurits</button>
-                <button class="circle4" id="circle4" onclick="robinbtn()">Robin</button>
-                <button id="circle5" onclick="markusbutton()">Markus</button>
-                <button id="circle6" onclick="elisebutton">Elise</button>
-                <button id="circle7" onclick="abdallahbutton()">Abdallah</button>
+                <button id="circle1" onclick="abdallahbutton()">Abdallah</button>
+                <button id="circle2" onclick="eirikbutton()">Eirik</button>
+                <button id="circle3" onclick="elisebutton()">Elise</button>
+                <button class="circle4" id="circle4" onclick="lauritsbtn()">Laurits</button>
+                <button id="circle5" onclick="linhbutton()">Linh</button>
+                <button id="circle6" onclick="markusbutton">Markus</button>
+                <button id="circle7" onclick="robinbutton()">Robin</button>
                 <button id="circle8" onclick="ottarbutton()">Ottar</button>
             </div>
             <div class="data-container">
