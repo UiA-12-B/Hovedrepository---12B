@@ -7,11 +7,17 @@
     <title>HowWeRoll prototype (lagring)</title>
     <script src="https://kit.fontawesome.com/c26cd2166c.js"></script>
     <!-- Med denne filen ønsker vi å bevise at vi kan samle inn data ... -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Handlee&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@100&display=swap" rel="stylesheet">
     <style>
     *{
         margin: 0;
         padding:0;
-        font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+        font-family: 'Handlee', cursive;
     }
 
     .container{
@@ -33,16 +39,15 @@
         border-radius:50%;
         text-align: center;
         background: #6D21AE;
-        box-shadow: inset 0 0 2px rgba(0,0,0,0.8);
         font-size: 25px;
         color: #E6E6E6;
     }
-    /*Style for Homebutton - the light will be shown when we move the mouse to the Homebutton in order to know that we have clicked on that or not*/
+    /*Light effect for Homebutton when we hover the cursor over the Homebutton*/
     #homebutton:focus,
     #homebutton:hover{
-        border: 2px solid #DCB0FF;
+        border: 2px solid #978ABE;
     }
-     /*Tooltip will show the index.html when we move the mouse to the home icon*/
+     /*Tooltip will show the index.html when we hover the cursor over the home icon*/
     [data-tooltip]::after{
         position: absolute;
         width: 70px;
@@ -67,27 +72,29 @@
 
      /*HOW WE ROLL*/
     .hwr-page h1{
-        font-size: 80px;
         margin-top: -50px;
-        background: linear-gradient(360deg, #fe59b6, #eb71d2, #d586e6, #bd98f3, #a8a7f8, #91b2fe, #7cbbff, #6bc3fc, #40cbfa, #00d2f1, #00d8e2, #07dccd);
+        margin-bottom: 40px;
+        background: #FEF6FF;
         text-transform: uppercase;
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
-        margin-bottom: 40px;
+        font-size: 70px;
+        font-family: 'Handlee', cursive;
     }
     /*Question box for HWR*/
     .questionbox{
-        width:80%;
-        height:820px;
+        width: 80%;
+        height: 880px;
         border-radius:50px;
-        background-image: linear-gradient(to top, #0a57ca, #3b56d7, #5c52e1, #7b4ce9, #9941ef);
+        background-image: linear-gradient(to top, #492eb5, #4e2fb6, #5331b8, #5832b9, #5c34ba);
         display:flex;
         flex-direction:column;
         text-align: center;
         align-items:center;
+        margin-top: -20px;
     }
     .questionboxtitle{
-        font-size:40px;
+        font-size: 40px;
         color: #E1DCF3;
         text-transform: uppercase;
         font-weight: bold;
@@ -96,7 +103,7 @@
     /*Style for 8 questions*/
     .question{
         margin-top: 5px;
-        font-size: 18px;
+        font-size: 22px;
         color:#E3E0F3;
     }
     /*Style for name selecting field*/
@@ -105,17 +112,19 @@
         border-radius: 7px;
         box-sizing: border-box;
         font-weight: bold;
-        font-family: sans-serif;
+        font-family: 'Handlee', cursive;
         font-size: 20px;
         color: #5D5D60;
         background:#EBEAEE;
     }
+    /*Light and text effect for "Velg et navn" box when we hover the cursor over the box*/
     .nameselector:focus,
     .nameselector:hover{
         outline: none;
-        border: 4px solid #BE93FD;
+        border: 4px solid #95AEDC;
         letter-spacing: 1px;
-        font-size: 20px;
+        font-size: 25px;
+        font-weight: bold;
     }
     .selectbox{
         margin-bottom: 30px;
@@ -139,21 +148,22 @@
     .button{
         margin: 10px;
         padding: 1rem 2rem;
-        background: darkslateblue;
+        background: #27177E;
         border-radius: 30px;
         box-shadow: 0 20px 20px rgba(0,0,0,0.2);
         border: 2px solid #492986;
         color: white;
         text-align: center;
         font-weight: bolder;
+        font-size: 16px;
         cursor: pointer;
+        transition: all 0.3s ease-in;
     }
+    /*Light effect for Submit and Report button when we hover the cursor over these buttons*/
     .button:focus,
     .button:hover{
         outline:none;
-        border: 2px solid #DEB2FF;
-        transition: all 0.3s ease-in;
-
+        border: 2px solid #95AEDC;
     }
 
     </style>
@@ -162,13 +172,14 @@
 <div class="container">
     <a data-tooltip= "index.html" href="index.html"><i class="fas fa-home" id="homebutton"></i></a>
     <div class="hwr-page">
-        <h1>how we roll</h1> <!--h1 is updated for hwrpage-->
+        <h1>how we roll</h1> <!--Title for page-->
     </div>
     <div class="questionbox">
         <div class="questionboxtitle">
             <p>Spørsmål</p>
         </div>
         <form>
+            <!--List of members in the group-->
             <p class="selectbox">
                 <select class="nameselector" id="store-name" name="name-option">
                     <option value="" style="text-align:center; font-weight:bold">-Velg et navn-</option>
@@ -182,6 +193,7 @@
                     <option value="Ottar Worren" id="ottar">Ottar Nordal Worren</option>
                 </select>
             </p>
+            <!--List of questions and range sliders so that we can use for answering questions-->
             <div class="question">
                 <p>Hvor godt trives du i gruppen?</p>
             </div>
@@ -230,25 +242,26 @@
             <p>
                 <input class="slider" type="range" id="q8" name="q8" value="50">
             </p>
+            <!--Submit button-->
             <button class="button" id="submitbtn" disabled="disabled" type="submit">Submit</button>
-            <button class="button" onclick="window.location.href='hwr-report.html'">Report</button>
+            <!--Report button which leads to HWR-report-->
+            <button class="button" onclick="window.location.href='hwr-report.html'">HWR-Report</button>
         </form>
     </div>
    <div class="results">
         <h2>Form Data</h2>
         <pre></pre>
     </div>
+        <!--Group's repository for How We Roll-->
+        <a href="https://github.com/UiA-12-B/Hovedrepository-12B"><i class="fab fa-github" style="font-size: 50px; color: black;" "></i></a>
+
 </div>
 
-
-
-
 <script>
+    //Disable submitbutton when we do not select any name
     const selectbox = document.querySelector('#store-name');
-
     selectbox.onchange = function(){
         var submitbtn = document.getElementById('submitbtn');
-
         if(selectbox.value==""){
            submitbtn.disabled = true
         } else {
