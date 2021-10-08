@@ -41,7 +41,7 @@ ONSDAG 06.oktober
 - Ferdigstillt javascriptet i hwr-report.html
 - Div. finpuss på html og css
 - Problem: Får ikke hentet ut data fra database og vist det på report
-
+- 
 
 
 
