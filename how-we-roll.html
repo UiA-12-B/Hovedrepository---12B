@@ -261,10 +261,13 @@
             <button class="button" onclick="window.location.href='hwr-report.html'">HWR-Report</button>
         </form>
     </div>
-    <!-- <div class="results">
-         <h2>Form Data</h2>
-         <pre></pre>
-     </div>-->
+    <div class="questionbox" id="svar" style="display: none;"> 
+    <div class="results">
+         <h1 class="questionboxtitle"></h1>
+         <p2 style="color: gray;"></p2><br>
+         <p3 style="color: gray;"></p3>
+     </div>
+    </div>
     <div class="Github">
         <!--Group's repository for How We Roll-->
         <a href="https://github.com/UiA-12-B/Hovedrepository-12B"><i class="fab fa-github" style="color: #28075F;"></i></a>
@@ -297,14 +300,51 @@
         event.preventDefault();
         const data = new FormData(event.target);
         const formJSON = Object.fromEntries(data.entries());
-        const results = document.querySelector('.results pre');
+
+        //Fyller inn der det skal i HTML
+        const resultsN = document.querySelector('.results h1');
+        const resultsId = document.querySelector('.results p2');
+        const resultsTid = document.querySelector('.results p3');
         postData('https://bacit.info/', formJSON)
             .then(data => {
-                results.innerText = JSON.stringify(data, null, 2);
-            });
+                //Printe ut kvittering
+
+                //Variabler koblet til spesefike områder av JSON fil
+                var eventNavn = JSON.stringify(data, ["name-option"]);
+                var eventId = JSON.stringify(data, ["trxid"]);
+                var eventTid = JSON.stringify(data, ["time"]);
+                
+                //Lager en string
+                var eventstring1 = new String();
+                var eventstring2 = new String();
+                var eventstring3 = new String();
+
+                //Fyller string med variabler og fjerner unødvnedigting
+                eventstring1 = eventNavn.toString().replace(/"name-option":|{|}|"/g, "");
+                eventstring2 = eventId.toString().replace(/"trxid":|{|}|"/g, "");
+                eventstring3 = eventTid.toString().replace(/"time":|{|}|"/g, "");
+
+                //Printer det ut
+                resultsN.innerHTML = eventstring1+" har sendt inn svar";
+                resultsId.innerHTML = "ID: "+eventstring2;
+                resultsTid.innerHTML = "Tid: "+eventstring3;
+            })
     }
     const form = document.querySelector('form');
     form.addEventListener('submit', handleSubmit);
+
+    //Viser container med svar kun når et svar er sendt inn
+
+    const svarDiv = document.getElementById("svar");
+    const svarbtn = document.getElementById("submitbtn");
+
+    svarbtn.onclick= function() {
+        if(svarDiv.style.display !== "none") {
+            svarDiv.style.display = "none";
+        } else {
+            svarDiv.style.display = "block";
+        }
+    };
 </script>
 </body>
 </html>
